@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+      <h1>Registro de datos</h1>
+    <form>
+          <!-- 
+            Van a crear un formulario de registro,
+            le van a pedir al usurio :
+            1) sus nombres
+            2) sus apellidos
+            3) su edad(que tipo debo usar para los numeros)
+            4) su correo electronico
+            5) que escriba una nueva contraseña 
+            6) que vuelva a escribir la contraseña
+            7) que escoja su tipo de documento(le damos a escoger entre dni y pasaporte )
+            9) que escoja sus nacionalidades(le damos escoger entre peruana , brasileña , chilena 
+            , ecuatoriana, colombiana)
+            10) terminar con un input de tipo submit
+        -->
+        <h2>Nombres y apellidos</h2>
+
+        <h3>Nombres:</h3>
+        <label for="nombres">Ingresa tus nombres </label>
+        <input type="text" name="nombres" id="nombres" placeholder="ej.Carlos aurelio">
+      
+
+        <h3>Apellidos:</h3>
+        <label for="apellidos">Ingresa tus apellidos </label>
+        <input type="text" name="apellidos" id="apellidos" placeholder="ej.Rosas rosas">
+        
+
+        <h3>Edad:</h3>
+        <label for="edad">Ingresa tu edad </label>
+        <input type="number" name="edad" id="edad" placeholder="ej.29">
+       
+
+
+        <h3>Email:</h3>
+        <label for="email">Ingresa tu email </label>
+        <input type="email" name="email" id="email" placeholder="ej. sagastinotevayas@tequeremos.com ">
+       
+
+
+        <h3>Contraseña:</h3>
+        <label for="contra">Ingresa tu nueva contraseña </label>
+        <input type="password" name="contra" id="contra" placeholder="ej.12345678">
+       
+
+        <h3> Repite la contraseña:</h3>
+        <label for="recontra">Ingresa tu nueva contraseña </label>
+        <input type="password" name="recontra" id="recontra" placeholder="ej.12345678">
+        
+
+
+        <h3> Tipo de documento:</h3>
+        <label for="dni">DNI </label>
+        <input type="radio" name="documento" id="dni" >
+        <label for="pasaporte">Pasaporte</label>
+        <input type="radio" name="documento" id="pasaporte" >
+        
+
+        <h3>Documento:</h3>
+        <label for="doc">Ingresa tu Documento </label>
+        <input type="number" name="doc" id="doc" placeholder="ej.12345678- 0123456789">
+       
+
+
+        <h3>Nacionalidad(es):</h3>
+        <label for="peru">Peruana</label>
+<!-- 
+        <input type="checkbox" name="peru" id="peru" value="pe">
+        <label for="brasil">Brasileña</label>
+        <input type="checkbox" name="brasil" id="brasil" value="br">
+        <label for="chile">Chilena</label>
+        <input type="checkbox" name="chile" id="chile" value="cl">
+        <label for="ecuador">Ecuatoriana</label>
+        <input type="checkbox" name="ecuador" id="ecuador" value="ec">
+        <label for="colombia">Colombiana</label>
+        <input type="checkbox" name="colombia" id="colombia" value="co"> -->
+
+
+        <select name="paises" id="paises">
+            <option value="peru">Peruana</option>
+            <option value="brasil">Brasileña</option>
+            <option value="chile">Chilena</option>
+            <option value="colombia">Colombiana</option>
+            <option value="ecuador">Ecuatoriana</option>
+        </select>
+
+
+        <h3>Fecha:</h3>
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" name="fecha">
+
+      <h3>Comentario(s):</h3>
+      
+      <textarea name="comentario" id="comentario" cols="30" rows="10">
+    
+      </textarea>
+
+        <br/>
+        <button type="submit">REGISTRAR DATOS</button>
+
+    </form>
+  </body>
+</html>
