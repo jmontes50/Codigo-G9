@@ -1,0 +1,22 @@
+/* etiqueta */
+/* , = y */
+article, h1{
+  background-color:deepskyblue;
+}
+
+/* va a referenciar a todos los hijos article que tenga section, pero en cualquier nivel */
+/* ' ' => dentro a cualquier nivel*/
+section article{
+  border:4px solid salmon;
+}
+
+/* a los hijos que esten en un primer nivel
+> primeros hijos */
+ul > li {
+  font-family: Arial;
+  color:limegreen;
+}
+
+nav > ul > ol > li {
+  color:mediumpurple;
+}
