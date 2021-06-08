@@ -64,13 +64,13 @@ p:first-of-type{
 <li></li>
 <li></li>
 <li></li> <- 3! */
-li:nth-of-type(3){
+ol > li:nth-of-type(3){
   font-style: italic;
   background-color:rebeccapurple;
   color:lightgray;
 }
 
-tr, td, th, table{
+tr,td,th,table{
   border:2px solid gray;
   border-collapse:collapse;
 }
@@ -78,3 +78,33 @@ tr, td, th, table{
 /* table{
   margin:0 auto;
 } */
+
+/* nth-of-type(An)
+de los n elementos que hay utiliza cada 3 */
+/* li:nth-of-type(3n){
+  color:tomato;
+  background-color: palegreen;
+} */
+
+/* nth-of-type(An+B), n comienza desde 0 y va aumentando*/
+li:nth-of-type(3n+2){
+  color:tomato;
+  background-color: palegreen;
+}
+
+li:hover{
+  text-decoration: underline;
+}
+
+#btn{
+  background-color:lightskyblue;
+  color:white;
+}
+/* hover, va a aplicar cuando el mouse este encima del elemento */
+#btn:hover{
+  /* pointer = a una manito */
+  cursor:pointer;
+  background-color: blue;
+}
+
+/* BEM - BLOCK ELEMENT MODIFIER */
