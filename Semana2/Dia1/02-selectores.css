@@ -20,3 +20,26 @@ ul > li {
 nav > ul > ol > li {
   color:mediumpurple;
 }
+
+/* .nombre_clase */
+.titulo{
+  color:red;
+  text-decoration: underline;
+}
+
+.noticia{
+  background-color:yellow;
+}
+
+.adicional{
+  font-family:Impact;
+}
+
+/* #nombre_id,
+que es único, es el equivalente a un dni */
+#importante{
+  background-color:yellowgreen;
+  /* Solamente utilicen important en casos de muuuucha necesidad */
+  text-decoration: overline !important;
+}
+
