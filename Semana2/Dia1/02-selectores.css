@@ -42,4 +42,39 @@ que es único, es el equivalente a un dni */
   /* Solamente utilicen important en casos de muuuucha necesidad */
   text-decoration: overline !important;
 }
+/* PSEUDOCLASES,
+condicional o estado */
 
+/* de las etiquetas de tipo tr vas a escoger las impares,
+odd = impar */
+tr:nth-of-type(odd){
+  background-color:lightskyblue;
+}
+/* hemos escogido los elementos de tipo tr pero pares
+even = pares */
+tr:nth-of-type(even){
+  background-color:lightgreen;
+}
+/* a los párrafos, pero que sean los primeros de su tipo */
+p:first-of-type{
+  color:orange;
+  font-weight:bold;
+}
+/* selector:nth-of-type(numero) el número referente según los hermanos del mismo que tenga ej
+<li></li>
+<li></li>
+<li></li> <- 3! */
+li:nth-of-type(3){
+  font-style: italic;
+  background-color:rebeccapurple;
+  color:lightgray;
+}
+
+tr, td, th, table{
+  border:2px solid gray;
+  border-collapse:collapse;
+}
+
+/* table{
+  margin:0 auto;
+} */
