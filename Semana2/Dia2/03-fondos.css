@@ -1,0 +1,31 @@
+body{
+  background-image: url('./penguin.jpg');
+  background-size: 200px;/*ancho*/
+  /* repeat-x, repeat-y, no-repeat*/
+  background-repeat: no-repeat;
+}
+
+.card{
+  width:400px;
+  height:600px;
+  background-image: url('./antarctica.jpg');
+  background-size: cover;
+  background-position: center;
+  /* border:grosor estilo color */
+  /* estilo => dotted, dashed, solid, double */
+  border:5px solid red;
+  /* border-radius:20px; */
+  /* border-radius:tl tr br bl */
+  border-radius:10px 20px 40px 80px;
+}
+
+.circulo{
+  /* alto y ancho iguales */
+  width:400px;
+  height:400px;
+  border:3px solid darkslateblue;
+  border-radius:50%;
+  /* box-shadow: ejeX ejeY size_blur color*/
+  /* div, h1, p, headers */
+  box-shadow: -20px 20px 20px skyblue;
+}
