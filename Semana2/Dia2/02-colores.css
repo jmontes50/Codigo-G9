@@ -1,0 +1,25 @@
+.hexadecimal{
+  /* 3 pares => RRGGBB 0 a ff*/
+  background-color: #34afee;
+  color:#fff;
+}
+
+.rgb{
+  /* 0 a 255 c/valor */
+  background-color:rgb(22, 105, 189);
+}
+
+.rgb > p{
+  font-weight:bold;
+  /* el alpha, va de 0 a 1 */
+  color:rgba(69, 199, 52, 0.363);
+}
+
+.hsl{
+  /* hsl(color, saturación, */
+  background-color:hsl(180, 75%, 50%);
+}
+
+.grad{
+  background-image:linear-gradient(245deg,skyblue,yellow)
+}

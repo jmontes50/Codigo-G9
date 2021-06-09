@@ -9,6 +9,8 @@ y funciona para poner un alias e indicar la ubicación de mi archivo de fuente *
   /* le puedo poner varias tipos de fuente
   Si no encuentra una fuente, pasará a la siguiente */
   font-family: 'Nanuk',Arial, Helvetica, sans-serif;
+  /* tamaño de letra */
+  font-size:40px;
 }
 
 .google{
