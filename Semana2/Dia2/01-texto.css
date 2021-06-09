@@ -1,0 +1,18 @@
+/* font-face me permite utilizar una fuente externa de una archivo
+y funciona para poner un alias e indicar la ubicación de mi archivo de fuente */
+@font-face{
+  font-family: 'Nanuk';/*alias*/
+  src:url('./nanuk.otf');/*ubicación*/
+}
+
+.familia{
+  /* le puedo poner varias tipos de fuente
+  Si no encuentra una fuente, pasará a la siguiente */
+  font-family: 'Nanuk',Arial, Helvetica, sans-serif;
+}
+
+.google{
+  font-family: 'Open Sans', sans-serif;
+  /* el grosor de la fuente */
+  font-weight:800;
+}
