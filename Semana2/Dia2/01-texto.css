@@ -16,3 +16,19 @@ y funciona para poner un alias e indicar la ubicación de mi archivo de fuente *
   /* el grosor de la fuente */
   font-weight:800;
 }
+
+.fontstyle{
+  font-style:italic;
+}
+
+.textindent{
+  text-indent: 20px;
+}
+
+.wordspacing{
+  word-spacing: 25px;
+}
+
+.lineheight{
+  line-height:30px;
+}
