@@ -1,0 +1,40 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: hsl(186, 86%, 17%);
+  font-family: 'Open Sans', sans-serif;
+  color:white;
+}
+
+header{
+  text-align: center;
+  padding:20px;
+}
+
+.imagen{
+  width:500px;
+  /* margin:arribaabajo costados */
+  /* margin: top right bottom left */
+  /* margin:50px 100px 200px 400px; */
+  /* auto = navegador tu encargate */
+  margin: 0 auto;
+  padding:40px;
+}
+
+img{
+  width:100%;
+}
+
+p, h4, ul{
+  text-align:center;
+  padding: 20px 40px;
+}
+
+li{
+  /* cambia las viñetas de la lista */
+  list-style: none;
+}
