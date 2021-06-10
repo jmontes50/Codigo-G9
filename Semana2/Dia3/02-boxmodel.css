@@ -14,3 +14,10 @@ h1{
   /* box-sizing:border-box; hará que las medidas que indiquemos incluyan el borde y el padding */
   box-sizing: border-box;
 }
+
+span{
+  border:1px solid gray;
+  background-color:lightgreen;
+  display:inline;
+  width:600px;
+}
