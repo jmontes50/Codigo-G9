@@ -1,0 +1,41 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.papa{
+  width:500px;
+  height:1500px;
+  border:1px solid rebeccapurple;
+  margin:40px;
+  position:relative;
+}
+
+.hijo{
+  width:200px;
+  height:200px;
+  border:2px solid red;
+}
+
+.caja1{
+  background-color: yellow;
+}
+.caja2{
+  background-color: purple;
+  position:absolute;
+  top:50px;
+  left:100px;
+  z-index: 15;
+}
+.caja3{
+  background-color:lightseagreen;
+  position:absolute;
+  z-index:9;
+}
+.caja4{
+  background-color: lightskyblue;
+  position:fixed;
+  bottom:50px;
+  right:100px;
+}
