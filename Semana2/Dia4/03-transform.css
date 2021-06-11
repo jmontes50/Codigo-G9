@@ -1,0 +1,12 @@
+.transformacion {
+  width: 200px;
+  height: 100px;
+  background-color: aqua;
+  transform: scale(5, 2) !important;
+}
+
+.girl {
+  width: 500px;
+  height: 400px;
+  transform: skew(25deg, 21deg) rotate(30deg) translate3d(300px, 200px,100px);
+}
