@@ -51,6 +51,24 @@ main {
   margin-left: 2%;
   margin-right: 2%;
   width: 96%;
-
   max-height: 500px;
+}
+
+.contenedor-medio {
+  display: flex;
+  flex-direction: row;
+}
+.contenido {
+  max-width: 300px;
+  max-height: 300px;
+  border: 1px solid teal;
+  border-radius:10px;
+  margin: 10px;
+  padding: 5px;
+  overflow-y: auto;
+}
+.imagen-contenido {
+  max-width: 250px;
+  max-height: 250px;
+  border-radius:5px;
 }
