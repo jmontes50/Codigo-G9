@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
 
 * {
-  background-color: white;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -32,7 +31,7 @@ h1 {
   flex-grow: 5;
 }
 
-a {
+.nav-a {
   text-decoration: none;
   color: teal;
   flex-grow: 0.2;
@@ -42,6 +41,7 @@ a {
 main {
   display: flex;
   flex-direction: column;
+  margin:auto;
   width: 100%;
 }
 .banner {
@@ -68,10 +68,73 @@ main {
   margin: 10px;
   padding: 5px;
   overflow: auto;
-
+}
+.contenido-body{
+  display: flex;
+  flex-direction: column;
+  padding:10px 20px 20px 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+.contenido-body-titulo{
+  color: black;
+}
+.contenido-body-texto{
+  color: black;
+  font-size: medium;
+  justify-content:center;
 }
 .imagen-contenido {
   max-width: 250px;
   max-height: 250px;
   border-radius:5px;
+}
+
+footer{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  width: 100%;
+  background-color:teal;
+  justify-content:space-between
+}
+.contenidos{
+  margin: 5px;
+
+}
+.contenedor-links{
+  display: flex;
+  flex-direction: column;
+  background-color:teal;
+}
+
+.links-footer,.red-social-texto{
+  text-decoration:none ;
+  color: white;
+  margin:10px;
+}
+.contenido-footer-redes-sociales{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.red-social{
+  display: flex;
+  flex-direction: row;
+}
+.red-social-imagen{
+  max-width: 30px;
+}
+.contenido-footer-imagen{
+  display: flex;
+  flex-direction: column;
+  padding:10px;
+}
+.gerente{
+  max-width:100px;
+  max-height:150px;
+}
+.gerente-titulo,.gerente-texto {
+color:white;
 }
