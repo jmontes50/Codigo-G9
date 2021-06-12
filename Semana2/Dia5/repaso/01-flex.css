@@ -1,0 +1,31 @@
+*{
+    background-color: black;
+}
+
+.contenedor-fila {
+  display: flex;
+    flex-direction:row;
+flex-wrap: wrap;
+}
+
+.contenido-fila {
+
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: blue;
+}
+.contenido-columna {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: yellow;
+}
+
+.contenedor-columna {
+    
+    flex-direction:column;
+    flex-wrap:wrap;
+}
+
