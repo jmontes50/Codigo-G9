@@ -1,0 +1,31 @@
+* {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+
+}
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+.etiqueta-logo{
+    font-size: 40px;
+    flex-grow: 5;
+}
+
+.primer-etiqueta{
+    flex-grow: 1;
+}
+
+.segunda-etiqueta{
+    flex-grow: 0.2;
+}
+
+.tercer-etiqueta{
+    flex-grow: 0.2;
+}
+.cuarta-etiqueta{
+    flex-grow: 0.2;
+}
