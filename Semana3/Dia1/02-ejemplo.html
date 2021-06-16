@@ -4,17 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
       rel="stylesheet"
     />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- nuestros estilos -->
     <link rel="stylesheet" href="./02-ejemplo.css" />
   </head>
   <body>
     <div class="container">
       <nav>
         <img src="./icon.png" alt="logo" />
+        <input type="checkbox" id="check">
+        
+        <!-- for hace atributo mediante un ID a un input -->
+        <label for="check" class="show-menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+
         <ul>
           <li>Home</li>
           <li>Destinos</li>
@@ -24,6 +35,11 @@
           </li>
           <li>
             <button class="btn-register">Register</button>
+          </li>
+          <li>
+            <label for="check" class="hide-menu-btn">
+              <i class="fas fa-times"></i>
+            </label>
           </li>
         </ul>
       </nav>
