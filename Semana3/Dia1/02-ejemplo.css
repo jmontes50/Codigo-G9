@@ -2,7 +2,7 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-  border:1px solid gray;
+  /* border:1px solid gray; */
 }
 
 /* variables */
@@ -14,9 +14,10 @@ nav{
   font-family: 'Lato', sans-serif;
   display:flex;
   justify-content: space-between;
+  margin-top:20px;
 }
 
-/* todos los img */
+/* todos los img dentro de nav */
 nav img{
   max-width: 40px;
 }
@@ -28,9 +29,40 @@ nav img{
 
 nav ul{
   display:flex;
+  align-items: center;
 }
 
+nav li{
+  list-style: none;
+  /* margin:arribaabajo costados */
+  margin:0 20px;
+  cursor:pointer;
+}
+/* del nav el elemento de tipo li numero 4 */
+nav li:nth-of-type(4){
+  margin-right: 5px;
+}
+
+nav li:nth-of-type(5){
+  margin-left: 5px;
+}
+
+button{
+  outline:none;
+}
 
 .btn-register{
   background-color: var(--color-primario);
+  color:white;
+  padding:8px;
+  border-radius:5px;
+  border:2px solid var(--color-primario);
+}
+
+.btn-login{
+  background-color: white;
+  color:var(--color-primario);
+  padding:8px;
+  border-radius:5px;
+  border:2px solid var(--color-primario);
 }
