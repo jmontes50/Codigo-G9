@@ -1,0 +1,40 @@
+h1{
+  background-color:hsl(160, 50%, 45%);
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+/* aplicando a articles */
+article{
+  border:3px solid limegreen;
+  margin:10px;
+}
+
+main{
+  /* por defecto siempre esta en row, uno al costado del otro */
+  display:flex;
+}
+
+
+/* que sea para pantallas, y que funcione a partir de menos de 768px */
+@media screen and (max-width:768px){
+  /* y todo el css que ponga aquí aplicará de ese tamaño para abajo */
+  h1{
+    background-color:rebeccapurple;
+    color:salmon;
+    font-size:40px;
+  }
+}
+
+/* breakpoint a 420px */
+@media screen and (max-width:420px){
+  h1{
+    background-color:rgb(255,255,100);
+  }
+
+  main{
+    flex-direction: column;
+  }
+}
+
+
