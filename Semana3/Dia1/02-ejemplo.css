@@ -1,0 +1,36 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  border:1px solid gray;
+}
+
+/* variables */
+:root{
+  --color-primario:#FB8F1D;
+}
+
+nav{
+  font-family: 'Lato', sans-serif;
+  display:flex;
+  justify-content: space-between;
+}
+
+/* todos los img */
+nav img{
+  max-width: 40px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+nav ul{
+  display:flex;
+}
+
+
+.btn-register{
+  background-color: var(--color-primario);
+}
