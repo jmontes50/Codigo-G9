@@ -8,6 +8,7 @@
 /* variables */
 :root{
   --color-primario:#FB8F1D;
+  --color-secundario:#1ABE84;
 }
 
 nav{
@@ -65,4 +66,61 @@ button{
   padding:8px;
   border-radius:5px;
   border:2px solid var(--color-primario);
+}
+
+/* agregando RWD al menú */
+
+#check{
+  /* el check se esconde */
+  position:absolute;
+  visibility: hidden;
+  z-index:-99;
+}
+
+.menu{
+  transition: 0.5s;
+}
+
+@media screen and (max-width:768px){
+
+  /* menu */
+  .menu{
+    position:fixed;
+    background-color:var(--color-secundario);
+    width:100%;
+    height:100vh;
+    top:0;
+    right: -100%;/*esto me va a servir para esconder mi menú*/
+    text-align:center;
+    /* padding: arribayabajo costados */
+    padding:100px 0;
+    z-index:20;
+    /* ya es flex, solamente cambiamos la dirección */
+    flex-direction: column;
+  }
+
+  .menu li{
+    padding:20px;
+    font-size:26px;
+  }
+
+  .btn-login, .btn-register{
+    font-size:26px;
+  }
+
+  .hide-menu-btn{
+    position:absolute;
+    top:50px;
+    right:50px;
+  }
+
+  .show-menu-btn{
+    display:block;
+    padding-right:10px;
+  }
+  /* la pseudoclase checked hace referencia si mi checkbox esta activado */
+  /* ~ este símbolo/selector hace referencia a los elementos que esten después de #check en la estructura, en este caso menu */
+  #check:checked ~ .menu{
+    right:0;
+  }
 }
