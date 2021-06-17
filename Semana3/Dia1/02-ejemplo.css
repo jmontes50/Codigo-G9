@@ -81,6 +81,12 @@ button{
   transition: 0.5s;
 }
 
+.show-menu-btn, .hide-menu-btn{
+  cursor:pointer;
+  font-size:30px;
+  display:none;
+}
+
 @media screen and (max-width:768px){
 
   /* menu */
@@ -114,7 +120,7 @@ button{
     right:50px;
   }
 
-  .show-menu-btn{
+  .show-menu-btn, .hide-menu-btn{
     display:block;
     padding-right:10px;
   }
