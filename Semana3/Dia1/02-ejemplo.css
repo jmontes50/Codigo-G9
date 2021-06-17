@@ -176,4 +176,14 @@ h1, label{
   #check:checked ~ .menu{
     right:0;
   }
+
+  /* header */
+  header{
+    flex-direction: column;
+    align-items:center
+  }
+
+  .header-content{
+    min-height: 300px;
+  }
 }
