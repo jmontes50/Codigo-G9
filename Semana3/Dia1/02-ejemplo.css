@@ -87,6 +87,53 @@ button{
   display:none;
 }
 
+/* header */
+header{
+  display:flex;
+}
+
+/* izquierda: header-content */
+.header-content{
+  width:45%;
+  padding:30px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* una buena práctica es definir las propiedad comunes para varios elementos ej.
+h1,h2,h3,h4,h5,h6 {font-family: 'Lato';} */
+
+h1, label{
+  font-family: 'Lato', sans-serif;
+  /* font-weight:bold; */
+}
+
+.header-content input{
+  padding:15px;
+  border-radius: 5px;
+}
+
+#btn-search{
+  background-color: var(--color-primario);
+  padding:12px;
+  color:white;
+  width:40%;
+  min-width:150px;
+  border-radius:10px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* derecha: header-img */
+.header-img{
+  width:55%;
+  padding:30px;
+}
+
+.header-img > img{
+  max-width:100%;
+}
+
 @media screen and (max-width:768px){
 
   /* menu */
