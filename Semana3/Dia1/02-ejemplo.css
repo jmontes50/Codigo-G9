@@ -120,9 +120,17 @@ header{
 /* una buena práctica es definir las propiedad comunes para varios elementos ej.
 h1,h2,h3,h4,h5,h6 {font-family: 'Lato';} */
 
-h1, label{
-  font-family: 'Lato', sans-serif;
+h1 {
+  font-size: 64px;
   /* font-weight:bold; */
+}
+
+h2 {
+  font-size: 36px;
+}
+
+label {
+  font-family: 'Lato', sans-serif;
 }
 
 .header-content input{
@@ -172,6 +180,59 @@ h1, label{
 
 .mb-30 {
   margin-bottom: 30px;
+}
+
+.section-title-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-link {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+}
+
+
+.section-cards {
+  display: flex;
+  margin-top: 50px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+}
+
+.card:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.card:nth-child(3) {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.place {
+  background-color: #fff;
+  bottom: 4px;
+  border-top-right-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  padding: 10px;
+  position: absolute;
+}
+
+.place p {
+  color: var(--color-dark)
+}
+
+.img-card {
+  height: 337px;
+  border-radius: 8px;
+  width: 100%;
+  object-fit: cover;
 }
 
 @media screen and (max-width:768px){
