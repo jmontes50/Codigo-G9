@@ -182,6 +182,26 @@ label {
   margin-bottom: 30px;
 }
 
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.mb-150 {
+  margin-bottom: 150px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-120 {
+  margin-top: 120px;
+}
+
 .section-title-card {
   display: flex;
   justify-content: space-between;
@@ -193,7 +213,6 @@ label {
   text-decoration: none;
   font-family: 'Lato', sans-serif;
 }
-
 
 .section-cards {
   display: flex;
@@ -234,6 +253,22 @@ label {
   width: 100%;
   object-fit: cover;
 }
+
+.start-checked {
+  color: #FFBB0C;
+}
+
+h4 {
+  font-size: 22px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+.sub-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
 
 @media screen and (max-width:768px){
 
