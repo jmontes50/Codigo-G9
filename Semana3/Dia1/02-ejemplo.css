@@ -290,6 +290,18 @@ h4 {
   color: var(--color-dark);
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F9F9FB;
+}
+
+.footer div {
+  padding: 35px;
+  width: 16%;
+}
+
 @media screen and (max-width:768px){
 
   /* menu */
