@@ -269,6 +269,26 @@ h4 {
   font-size: 18px;
 }
 
+.img-card-trending {
+  width: 100%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  height: 200px;
+}
+
+.card-title {
+  font-family: 'Lato', sans-serif;
+  margin-top: 10px;
+  font-size: 19px;
+}
+
+.card-subtitle {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: var(--color-dark);
+}
 
 @media screen and (max-width:768px){
 
