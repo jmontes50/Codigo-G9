@@ -20,16 +20,15 @@
       <nav>
         <img src="./icon.png" alt="logo" />
         <input type="checkbox" id="check">
-        
         <!-- for hace atributo mediante un ID a un input -->
         <label for="check" class="show-menu-btn">
           <i class="fas fa-bars"></i>
         </label>
-
         <ul class="menu">
           <li>Home</li>
-          <li>Destinos</li>
-          <li>About</li>
+          <li class="li__disabled">Destinos</li>
+          <li class="li__disabled">About</li>
+          <li class="li__disabled">Compañeros</li>
           <li>
             <button class="btn-login">Login</button>
           </li>
@@ -48,11 +47,12 @@
         <div class="header-content">
           <h1>Explora y Viaja</h1>
           <label>Buscador de Sitios</label>
-          <input 
-            type="text" 
+          <input
+            class="input-search"
+            type="text"
             placeholder="Ingrese un sitio"
           >
-          <button id="btn-search">
+          <button class="btn-register width-40">
             Explorar
           </button>
         </div>
@@ -60,6 +60,23 @@
           <img src="./assets/img/img1.png" alt="img-header">
         </div>
       </header>
+      <section class="section-container">
+        <div>
+          <!-- ** Aca va la imagen -->
+          <img width="450" src="./assets/img/img2.png" alt="img-section-2">
+        </div>
+        <div>
+          <!-- ** Aca va ir el texto -->
+          <h1 class="mb-30">
+            A new way to explore the world
+          </h1>
+          <p class="section-p mb-30">
+            For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect 
+            trip, but now, they can also let Lonely Planet Experiences lead the way
+          </p>
+          <button class="btn-register">Learn more</button>
+        </div>
+      </section>
     </div>
   </body>
 </html>

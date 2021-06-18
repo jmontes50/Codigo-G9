@@ -9,6 +9,8 @@
 :root{
   --color-primario:#FB8F1D;
   --color-secundario:#1ABE84;
+  --color-dark: #AFB0B9;
+  --color-darl-bold: #7D7987;
 }
 
 nav{
@@ -48,6 +50,12 @@ nav li:nth-of-type(5){
   margin-left: 5px;
 }
 
+.li__disabled {
+  color: var(--color-dark) !important;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 button{
   outline:none;
 }
@@ -56,16 +64,24 @@ button{
   background-color: var(--color-primario);
   color:white;
   padding:8px;
+  padding-right: 30px;
+  padding-left: 30px;
   border-radius:5px;
-  border:2px solid var(--color-primario);
+  border:1px solid var(--color-primario);
 }
 
 .btn-login{
   background-color: white;
   color:var(--color-primario);
   padding:8px;
+  padding-right: 30px;
+  padding-left: 30px;
   border-radius:5px;
-  border:2px solid var(--color-primario);
+  border:1px solid var(--color-primario);
+}
+
+.width-40 {
+  width: 40% !important;
 }
 
 /* agregando RWD al menú */
@@ -132,6 +148,30 @@ h1, label{
 
 .header-img > img{
   max-width:100%;
+}
+
+.input-search {
+  border: 1px solid var(--color-dark);
+}
+
+.section-container {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-container div {
+  padding: 30px;
+}
+
+.section-p {
+  font-size: 17px;
+  color: var(--color-darl-bold);
+  font-family: 'Lato', sans-serif;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width:768px){
