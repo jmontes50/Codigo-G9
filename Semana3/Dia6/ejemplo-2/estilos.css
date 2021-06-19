@@ -25,6 +25,13 @@
   box-shadow:3px 3px 3px lightgray;
   background-size: cover;
   background-position: center;
+  transition: all 250ms;
+  animation: mianimacion 0.5s ease-out normal;
+}
+
+.caja:hover{
+  box-shadow:5px 5px 5px gray;
+  transform:translate(0, 5px) scale(1.01);
 }
 
 /* cada caja x separado */
@@ -32,18 +39,21 @@
   background-image:url('./assets/img/tile1.jpg');
   grid-column: 1 / 3;
   grid-row:1 / 3;
+  animation-delay:50ms;
 }
 
 .caja:nth-of-type(2){
   background-image:url('./assets/img/tile2.jpg');
   grid-column:3 / 4;
   grid-row:1 / 2;
+  animation-delay:100ms;
 }
 
 .caja:nth-of-type(3){
   background-image:url('./assets/img/tile10.jpg');
   grid-column: 3 / 4;
   grid-row: 2 / 3;
+  animation-delay:150ms;
 }
 
 .caja:nth-of-type(4){
@@ -74,4 +84,19 @@
   background-image: url('./assets/img/tile12.jpg');
   grid-column: 2 / -1;
   grid-row: 4 / 5;
+}
+
+@keyframes mianimacion {
+  0% {
+    /* no se va a ver nada */
+    transform: scale(0);
+  }
+  70% {
+    /* se va a agrandar un poquito */
+    transform: scale(1.05)
+  }
+  100%{
+    /* lo dejamos sin escalar, escala1:1 */
+    transform:scale(1)
+  }
 }
