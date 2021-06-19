@@ -98,10 +98,12 @@
   }
   70% {
     /* se va a agrandar un poquito */
-    transform: scale(1.05)
+    transform: scale(1.05);
+    color:black;
   }
   100%{
     /* lo dejamos sin escalar, escala1:1 */
-    transform:scale(1)
+    transform:scale(1);
+    color:white;
   }
 }
