@@ -1,11 +1,7 @@
-* {
-  background-color: black;
-}
-
 header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 25px;
   padding: 5px;
   width: 100%;
@@ -13,7 +9,7 @@ header {
 }
 
 h1 {
-  color: white;
+  color: black;
   margin-left: 5px;
 }
 
@@ -27,7 +23,6 @@ li {
   margin: 10px;
 }
 a {
-  color: white;
   font-weight: bold;
   font-size: 20px;
   text-decoration: none;
@@ -41,7 +36,46 @@ main {
   display: flex;
   flex-direction: column;
 }
-.container-images{
-    display: flex;
-    flex-direction: row;
+.container-images {
+  display: flex;
+  flex-direction: row;
+  /* justify-content:center; */
+  margin: 0 auto;
 }
+
+.container-texto {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
+.texto {
+  color: yellow;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    *{
+        background-color: black;
+    }
+}
+
+
+
+/* 
+
+1.Para pantallas pequeñas quiero ver las imagenes en forma de columna y que no excedan de los 400px de ancho
+ademas quiero que tengan un borde redondeado
+2.en pantallas grandes las images deberan estar en una fila y ademas deberan teber un ancho maximo de 1080px
+
+3.En pantallas pequeñas el background de colo narnaja
+4.En pantallas grandes el background de color celeste
+
+*/
