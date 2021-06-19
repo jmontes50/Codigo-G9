@@ -1,0 +1,24 @@
+*{
+  border:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.contenedor{
+  border:2px solid red;
+  display:grid;
+
+  /* 1fr representa una división del espacio libre */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-columns: minmax(100px,200px) minmax(100px,200px) minmax(100px,200px); */
+  /* minmax(tamañomin, tamañomax) */
+  /* repeat(cant_repeticiones, tamaño) */
+  grid-template-columns: repeat(3, minmax(150px,300px));
+
+  grid-template-rows: 150px 150px 150px;
+  gap:40px;
+}
+
+.item{
+  border:2px solid blue;
+}
