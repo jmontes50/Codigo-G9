@@ -16,7 +16,8 @@
   grid-template-columns: repeat(3, minmax(150px,300px));
 
   grid-template-rows: 150px 150px 150px;
-  gap:40px;
+  column-gap:40px;
+  row-gap:20px;
 }
 
 .item{
