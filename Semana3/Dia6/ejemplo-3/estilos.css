@@ -1,0 +1,57 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background-color:rgb(42, 42, 42);
+}
+
+.middle{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+.card{
+  width:400px;
+  height:520px;
+  cursor:pointer;
+}
+
+.front, .back{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  /* backface visibilite hace qie si este rotado ya no se vea */
+  backface-visibility: hidden;
+  /* estamos haciendo que uno se ponga detras de otro */
+  position: absolute;
+  transition: transform 600ms linear;
+}
+
+.front img{
+  width:100%;
+}
+
+.front{
+  /* perspective es como inclinar una hoja a nuestra vista */
+  /* rotate esta haciendo que rote en un determinado eje */
+  transform:perspective(600px) rotateY(0deg);
+}
+
+.back{
+  background:#eee;
+  transform:perspective(600px) rotateY(180deg);
+}
+
+.card:hover > .front{
+  transform:perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back{
+  transform:perspective(600px) rotateY(0deg);
+}
