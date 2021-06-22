@@ -31,3 +31,20 @@ let oracion = saludo + nombre + " y tengo " + edad;
 
 console.log(oracion)
 
+let cita = "\"La imaginación es más importante que el conocimiento\". \nAlbert Einstein";
+
+console.log(cita);
+
+console.log("11" + 1);//concatenando
+
+console.log("11" - 1);//resta
+
+let saludo2 = "Buen día ";
+
+let ciudad = "Arequipa";
+
+//${} significa que ahí adentro puedo usar JS
+//template string
+let oracion2 = `${saludo2} soy de ${ciudad}`;
+
+console.log(oracion2);
