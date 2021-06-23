@@ -102,3 +102,41 @@
 //     console.log("el numero mayor es nro3")
 //   }
 // }
+
+/**
+ * Un supermercado compra uva para vender
+ * el kilo de uva lo compra a 5 soles
+ * para venderla la divide en 02 tamaños 1 y 2
+ * pero tambien la divide en 02 tipos, tipo A y B
+ * Considerando:
+ * Si es de tipo A pero de tamaño 1 se le adicionara 0.20 a su precio de venta
+ * Si es de tipo A pero de tamaño 2 se le adicionara 0.30 a su precio de venta
+ * Si es de tipo B pero de tamaño 1 se le adicionara 0.35 a su precio de venta
+ * Si es de tipo B pero de tamaño 2 se le adicionara 0.50 a su precio de venta
+ * calcule el precio de venta considerando el tipo, el tamaño y la cantidad de kilos
+ * Intenten utilizar if anidados
+ */
+
+ let tipoUva = "B";
+ let tamano = 1;
+ let precioUva = 5;
+ let cantKilos = 100;
+ 
+ if(tipoUva == "A"){
+     if(tamano == 1){
+         precioUva=precioUva+0.20;
+         console.log(cantKilos*precioUva);
+     }else{
+         precioUva=precioUva+0.30;
+         console.log(cantKilos*precioUva);
+     }
+ }else{
+     // aca asumo que ya es de tipo B 
+     if(tamano==1){
+         precioUva=precioUva+0.35;
+         console.log(cantKilos*precioUva);
+     }else{
+         precioUva=precioUva+0.50;
+         console.log(cantKilos*precioUva);
+     }
+ }
