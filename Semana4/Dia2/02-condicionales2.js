@@ -26,3 +26,15 @@ if((anio % 4 == 0 && anio %100 != 0) || anio % 400 == 0){
 }else{
   console.log("Nah, no es bisiesto")
 }
+
+//Si comparamos solamente con == compara el contenido/valor
+
+//si comparamos con el === comparamos el valor y también el tipo de dato
+
+let numero = "100"
+
+if(numero === 100){
+  console.log("es un centenar")
+}else{
+  console.log("No es un centenar")
+}
