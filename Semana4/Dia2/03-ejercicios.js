@@ -64,20 +64,41 @@
  * Cree un algoritmo que acepte la cantidad de personas/platillos y muestre el precio final.
  */
 
-let cantPlatos = +prompt("Cuantos asistentes/comenzales tendrá el evento?")
+// let cantPlatos = +prompt("Cuantos asistentes/comenzales tendrá el evento?")
 
-let precioFinal = 0;
+// let precioFinal = 0;
 
-if(cantPlatos > 300){
-  precioFinal = cantPlatos * 75;
-  console.log(`El precio sera de: ${precioFinal}`)
-}else if(cantPlatos < 300 && cantPlatos >= 200){
-  precioFinal = cantPlatos * 85;
-  console.log(`El precio sera de: ${precioFinal}`)
-}else if(cantPlatos < 200 && cantPlatos >= 100){
-  precioFinal = cantPlatos * 88;
-  console.log(`El precio sera de: ${precioFinal}`)
-}else{
-  precioFinal = cantPlatos * 90;
-  console.log(`El precio sera de: ${precioFinal}`)
-}
+// if(cantPlatos > 300){
+//   precioFinal = cantPlatos * 75;
+//   console.log(`El precio sera de: ${precioFinal}`)
+// }else if(cantPlatos < 300 && cantPlatos >= 200){
+//   precioFinal = cantPlatos * 85;
+//   console.log(`El precio sera de: ${precioFinal}`)
+// }else if(cantPlatos < 200 && cantPlatos >= 100){
+//   precioFinal = cantPlatos * 88;
+//   console.log(`El precio sera de: ${precioFinal}`)
+// }else{
+//   precioFinal = cantPlatos * 90;
+//   console.log(`El precio sera de: ${precioFinal}`)
+// }
+
+//Ejemplo If anidados
+// let nro1 = 45;
+// let nro2 = 10;
+// let nro3 = 90;
+
+// //Necesitamos saber cual de estos 03 es el número mayor
+// //if anidados
+// if(nro1 > nro2){
+//     if(nro1 > nro3){
+//       console.log("el numero mayor es nro1")
+//     }else{
+//       console.log("el numero mayor es nro3")
+//     }
+// }else{
+//   if(nro2 > nro3){
+//     console.log("el numero mayor es nro2")
+//   }else{
+//     console.log("el numero mayor es nro3")
+//   }
+// }
