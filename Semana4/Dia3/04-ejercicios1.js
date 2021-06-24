@@ -76,6 +76,7 @@ let contador = 0; //cuantas notas estoy contando
 
 do{
   let nota =+prompt("Cual es tu nota?")
+  //SIEMPRE COMPAREN PRIMERO LA SITUACIÓN MAS FACIL DE DESCARTAR
   if(nota === -1){
     semaforo = false
   }else if(nota >= 12){
