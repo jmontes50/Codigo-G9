@@ -116,6 +116,8 @@ let presupuesto = +prompt("cuando desea gastar???")
 
 let juegosComprados = []
 
+
+
 for(let i = 0; i < arrJuegos.length; i++){
   if(presupuesto < arrJuegos[i].precio){
     //hace que salte la iteración
