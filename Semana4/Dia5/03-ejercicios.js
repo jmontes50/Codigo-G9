@@ -48,3 +48,5 @@ let esPrimo = (numero) => {
   }
   return true;
 }
+
+console.log(esPrimo(10))
