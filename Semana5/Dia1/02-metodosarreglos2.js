@@ -22,4 +22,12 @@ let peliculasBuenas = peliculas.filter((peli) => {
   return peli.vote_average > 5
 })
 
-console.table(peliculasBuenas)
+// console.table(peliculasBuenas)
+
+let peliculasBuenardas = peliculas.map((peli) => {
+  if(peli.vote_average > 5){
+    return peli.title
+  }
+})
+
+console.table(peliculasBuenardas)
