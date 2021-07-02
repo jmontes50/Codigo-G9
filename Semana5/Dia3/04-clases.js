@@ -41,7 +41,7 @@ console.log(lechuguita)
 
 lechuguita.aparecer()
 
-//
+//funcion constructor
 let personaConstructor = (nombre, edad) => {
   let objPersona = {
     Nombre:nombre,
