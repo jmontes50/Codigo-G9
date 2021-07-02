@@ -16,4 +16,15 @@ class Comprobante {
   agregarDetalle(objDetalle){
     this.detalles.push(objDetalle)
   }
+
+  //necesitamos según la cantidad y el P.Unit.
+  //obtener el valor de cada detalle
+  calcularSubTotal(cantidad, p_unit){
+    return cantidad * p_unit
+  }
+
+  //static, hace que no requiera crear un nuevo objeto (no necesita una instancia)
+  static mostrarFecha(){
+    console.log(new Date())
+  }
 }
