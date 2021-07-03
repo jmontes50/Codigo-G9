@@ -15,3 +15,31 @@ titulo.innerHTML = "<i>Nuevo Título de mi App</i>"
 titulo.style.color = "rebeccapurple"
 titulo.style.backgroundColor = "lime"
 titulo.style.padding = "10px"
+
+let listaItems = document.getElementsByClassName("lista_item")
+
+console.log(listaItems)
+
+let arregloItems = Array.from(listaItems)
+
+console.log(arregloItems)
+
+arregloItems.forEach((item) => {
+  item.style.fontFamily = "Arial"
+  item.style.fontWeight = "bold"
+})
+
+let cajitas = document.querySelectorAll(".cajita")
+
+console.log(cajitas)
+
+cajitas.forEach((caja) => {
+  caja.innerHTML = "Contenido Caja"
+  //añadir una clase al elemento
+  caja.style.width = "200px"
+  caja.style.height = "200px"
+  caja.classList.add("resaltado")
+  caja.classList.add("redondeado")
+
+  console.log(caja.classList)
+})
