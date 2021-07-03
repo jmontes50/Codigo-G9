@@ -68,7 +68,11 @@ setInterval(() => {
 
 let divContenido = document.getElementById("contenido")
 
-divContenido.innerHTML = "<p>párrafo desde JS</p>"
+divContenido.innerHTML = "<p id='p1'>párrafo desde JS</p>" //si quiero modificarlo voy a tener que asegurarme que exista antes
+
+let parrafo1 = document.getElementById("p1")
+
+console.log("parrafo1",parrafo1)
 
 //document.createElement("etiqueta")
 //crea un objeto element (elementoHTML) de forma nativa
@@ -77,3 +81,28 @@ parrafo2.innerHTML = "Texto del párrafo 2"
 
 //appendChild hace que un elemento se añada como hijo de otro Elemento 
 divContenido.appendChild(parrafo2)
+
+//1 creo el elemento
+let imagen = document.createElement("img")
+//2 configuro atributos de ser necesarios
+//element.setAttribute("nombre_del_atributo", "valor del atributo")
+let url = "https://picsum.photos/200"
+imagen.setAttribute("src", url)
+imagen.setAttribute("alt","fotooooooo")
+//3 lo agrego en alguna parte del DOM, como hijo de otro elemento
+divContenido.appendChild(imagen)
+
+let seleccion = ["Lapadula","Gallese","Carrillo","Cuevita","Ormeño","Yotún","Tapia","Pizarro","Flores","Ramos","Corzo"]
+
+let lista = document.createElement("ul")
+
+let htmlitems = "";
+
+seleccion.forEach((jugador) => {
+  htmlitems = htmlitems + `<li>${jugador}</li>`
+})
+
+// console.log(typeof htmlitems)
+lista.innerHTML = htmlitems
+
+divContenido.appendChild(lista)
