@@ -36,3 +36,14 @@ peliculas.forEach((peli, indice) => {
 tabla.innerHTML = contTabla;
 
 divContenido.appendChild(tabla)
+
+
+let p = document.createElement("p")
+
+p.innerHTML = "texto"
+
+divContenido.appendChild(p)
+
+console.log(p)
+
+p.innerHTML = "modificado"
