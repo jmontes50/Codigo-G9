@@ -53,3 +53,24 @@ libros.forEach((book) => {
     alert(`Has hecho click en ${book}`)
   })
 })
+
+let input = document.createElement("input")
+input.setAttribute("type","password")
+divContenido.appendChild(input)
+
+let btnVer = document.createElement("button")
+btnVer.innerHTML = "Ver Password"
+divContenido.appendChild(btnVer)
+
+let esVisible = false
+
+btnVer.addEventListener("click", () => {
+  // ! es un NOT
+  esVisible = !esVisible
+
+  if(esVisible === true){
+    input.setAttribute("type","text")
+  }else{
+    input.setAttribute("type", "password")
+  }
+})
