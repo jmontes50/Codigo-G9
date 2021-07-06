@@ -98,7 +98,7 @@ bebidas.forEach((item) => {
     <td>
       ${item.nombre}
     </td>
-    <td>
+    <td style="color:${item.saludable === true ? 'green' : 'red'}">
       ${item.saludable === true ? "recomendado" : "malo"}
     </td>
   </tr>`
