@@ -35,7 +35,7 @@ goToGoogle.addEventListener("click", (e) => {
 
 let formulario = document.getElementById("formulario")
 
-formulario.addEventListener("submit", (e) => {
-  e.preventDefault()
+formulario.addEventListener("submit", (eventito) => {
+  eventito.preventDefault()
 })
 
