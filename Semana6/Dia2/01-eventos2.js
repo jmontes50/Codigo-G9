@@ -13,7 +13,29 @@ let boton = document.createElement("button")
 boton.innerHTML = "Mostrar Valor"
 
 boton.addEventListener("click", () => {
+  //podemos obtener el valor,contenido de un input gracias a la propiedad value
   console.log(miInput.value)
 })
 
 divContenido.appendChild(boton)
+
+
+let goToGoogle = document.createElement("a")
+
+goToGoogle.setAttribute("href", "http://google.com")
+goToGoogle.innerHTML = "Llevame a Google"
+
+divContenido.appendChild(goToGoogle)
+
+//para detener un evento por defecto podemos utilizar el e.preventDefault(), detiene el comportamiento por defecto por ejemplo de un hipervinculo hacia otra URL
+goToGoogle.addEventListener("click", (e) => {
+  e.preventDefault()
+})
+
+
+let formulario = document.getElementById("formulario")
+
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault()
+})
+
