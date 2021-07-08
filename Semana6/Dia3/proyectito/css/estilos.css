@@ -50,3 +50,37 @@ body{
   gap:25px;
   padding:25px;
 }
+
+.imagen{
+  height:250px;
+  overflow:hidden;
+}
+
+.imagen > img{
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.texto{
+  padding:10px;
+  color:var(--color-secundario);
+}
+
+.texto *{
+  padding:2px;
+}
+
+.precio{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-agregar{
+  background-color: var(--color-primario);
+  color:white;
+  padding:10px;
+  border:none;
+}
