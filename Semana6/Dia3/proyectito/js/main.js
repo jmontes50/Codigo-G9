@@ -56,3 +56,32 @@ let listaPlatillos = [
       "https://images.unsplash.com/photo-1614563637806-1d0e645e0940?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
   },
 ];
+
+let divContenido = document.getElementById("contenido")
+
+let dibujarTarjetas = () => {
+  let htmlTarjetas = "";
+
+  listaPlatillos.forEach((plato) => {
+    htmlTarjetas = htmlTarjetas + 
+    `<div class="tarjeta">
+      <div class="imagen">
+        <img src="${plato.imagen}">
+      </div>
+      <div class="texto">
+        <h4>${plato.nombre}</h4>
+        <p>${plato.descripcion}</p>
+        <div class="precio">
+          <span>S/ ${plato.precio}</span>
+          <button class="btn-agregar">
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>`
+  })
+
+  divContenido.innerHTML = htmlTarjetas
+}
+
+dibujarTarjetas()

@@ -61,6 +61,7 @@ body{
   object-fit: cover;
   object-position: center;
   border-radius: 5px;
+  min-height: 100%;
 }
 
 .texto{
