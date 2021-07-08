@@ -10,7 +10,7 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-  font-family: 'Open-Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 li{
@@ -32,4 +32,21 @@ body{
   height:54px;
   padding:15px;
   color:var(--color-secundario)
+}
+
+.principal{
+  background-color: var(--color-bg-primario);
+  display:flex;
+}
+
+.menu{
+  width:20%;
+}
+
+#contenido{
+  display:grid;
+  grid-template-columns: repeat(4,minmax(150px, 1fr));
+  grid-template-rows: repeat(4,minmax(150px, 1fr));
+  gap:25px;
+  padding:25px;
 }
