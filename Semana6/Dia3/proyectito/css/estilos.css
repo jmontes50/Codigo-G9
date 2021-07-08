@@ -84,3 +84,49 @@ body{
   padding:10px;
   border:none;
 }
+
+.carrito{
+  width:25%;
+  background-color: var(--color-bg-secundario);
+  color:var(--color-terciario);
+  padding:30px;
+}
+
+#fecha{
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.carrito > table{
+  width:100%;
+  /* espaciado entre las celdas */
+  border-spacing: 0;
+}
+
+.carrito th,td{
+  padding:20px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-secundario);
+}
+
+.resumen > table{
+  width:100%;
+  border-spacing: 0;
+}
+
+#btn-pagar{
+  display:block;
+  margin:20px auto;
+  border-radius:10px;
+  width:90%;
+  height:70px;
+  color:white;
+  background-color: var(--color-primario);
+  border:0;
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+button:hover{
+  font-weight: bold;
+}
