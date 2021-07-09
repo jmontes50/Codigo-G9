@@ -57,16 +57,17 @@ let listaPlatillos = [
   },
 ];
 
-let divContenido = document.getElementById("contenido")
+let divContenido = document.getElementById("contenido");
 
-let carrito = []
+let carrito = [];
 
 let dibujarTarjetas = () => {
   let htmlTarjetas = "";
 
   listaPlatillos.forEach((plato) => {
-    htmlTarjetas = htmlTarjetas + 
-    `<div class="tarjeta">
+    htmlTarjetas =
+      htmlTarjetas +
+      `<div class="tarjeta">
       <div class="imagen">
         <img src="${plato.imagen}">
       </div>
@@ -80,25 +81,25 @@ let dibujarTarjetas = () => {
           </button>
         </div>
       </div>
-    </div>`
-  })
+    </div>`;
+  });
 
-  divContenido.innerHTML = htmlTarjetas
-}
+  divContenido.innerHTML = htmlTarjetas;
+};
 
-dibujarTarjetas()
+dibujarTarjetas();
 
 /**
  * 1. obtener los elementos mediante el obj document, ya sea por id, etc...
  * 2. obtenido los datos y después pues los hemos convertido o pasado por un algoritmo
- * 
+ *
  */
 
 //Obtenemos los btn-agregar, después del cambio al innerHTML de divContenido, ya que necesitamos que las tarjetas que representan cada producto existan en el DOM
 //Obtenemos un HTMLCollection que pasaremos a un arreglo
-let btnsAgregar = document.getElementsByClassName("btn-agregar")
+let btnsAgregar = document.getElementsByClassName("btn-agregar");
 //convertimos el HTMLCollection a un array
-let arregloBtnsAgregar = Array.from(btnsAgregar)
+let arregloBtnsAgregar = Array.from(btnsAgregar);
 
 //recorrerlo
 arregloBtnsAgregar.forEach((boton) => {
@@ -106,23 +107,43 @@ arregloBtnsAgregar.forEach((boton) => {
   boton.addEventListener("click", () => {
     //Necesitamos saber que botón estamos presionando, entonces utilizamos el atributo personalizado que guarda el id del plato, para reconocerlo.
     //y lo hacemos mediante el método getAttribute, este método devuelve el valor del atributo
-    let idObtenido = +boton.getAttribute("data-idplato")
+    let idObtenido = +boton.getAttribute("data-idplato");
     //Requerimos convertir este id a un number para que se compare correctamente, ya que se obtiene como un string, por eso le añadimos un + al momento de buscar
-    let platoObtenido = buscarPlatoPorId(idObtenido)
+    let platoObtenido = buscarPlatoPorId(idObtenido);
 
-    agregarACarrito(platoObtenido)
-  })
-})
+    agregarACarrito(platoObtenido);
+  });
+});
 
 let buscarPlatoPorId = (id) => {
-  for(let i = 0; i < listaPlatillos.length; i++){
-    if(id === listaPlatillos[i].id){
-      return listaPlatillos[i]
+  for (let i = 0; i < listaPlatillos.length; i++) {
+    if (id === listaPlatillos[i].id) {
+      return listaPlatillos[i];
     }
   }
-}
+};
 
+//1. necesitamos saber si el plato existe
+//2. si es que existe tenemos que manejar una cantidad
+//3. si es nuevo lo agregamos pero con una cantidad de 1
 let agregarACarrito = (platoAPedir) => {
-  carrito.push(platoAPedir)
-  console.log(carrito)
-}
+  let indicePlato = carrito.findIndex((Pedido) => {
+    if (Pedido.plato.id === platoAPedir.id) {
+      return Pedido; //esto no retorna el plato, me retorna o -1 o 0,1,2,3,... (la posicion)
+    }
+  });
+
+  //Si es que no existe (-1) significa que el plato no se ha encontrado dentro de carrito, es nuevo
+  if (indicePlato === -1) {
+    //si es nuevo crearemos un pedido, pedido tendrá el plato que estamos pidiendo mas la cantidad de 1
+    let pedido = {
+      plato: platoAPedir,
+      cantidad: 1,
+    };
+    console.log(pedido);
+    carrito.push(pedido);
+  }
+  console.log(indicePlato);
+
+  // console.log(carrito)
+};
