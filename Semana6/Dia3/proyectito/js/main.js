@@ -140,10 +140,13 @@ let agregarACarrito = (platoAPedir) => {
       plato: platoAPedir,
       cantidad: 1,
     };
-    console.log(pedido);
     carrito.push(pedido);
+  }else{
+    //Si es que ya existe obtendriamos la posición del pedido existente
+    //con la posición podemos modificar directamente el pedido deseado y aumentar su cantidad
+    carrito[indicePlato].cantidad++
   }
-  console.log(indicePlato);
 
-  // console.log(carrito)
+
+  console.log(carrito)
 };
