@@ -59,6 +59,8 @@ let listaPlatillos = [
 
 let divContenido = document.getElementById("contenido");
 
+let tbodyCarrito = document.getElementById("tbody-carrito")
+
 let carrito = [];
 
 let dibujarTarjetas = () => {
@@ -146,7 +148,23 @@ let agregarACarrito = (platoAPedir) => {
     //con la posición podemos modificar directamente el pedido deseado y aumentar su cantidad
     carrito[indicePlato].cantidad++
   }
-
-
-  console.log(carrito)
+  // console.table(carrito)
+  dibujarCarrito()
 };
+
+let dibujarCarrito = () => {
+  let htmlCarrito = ""
+
+  carrito.forEach((pedido) => {
+    //Item - cantidad - P.U. - Subtotal
+    htmlCarrito = htmlCarrito + 
+    `<tr>
+      <td>${pedido.plato.nombre}</td>
+      <td>${pedido.cantidad}</td>
+      <td>${pedido.plato.precio}</td>
+      <td>${pedido.cantidad * pedido.plato.precio}</td>
+    </tr>`
+  })
+
+  tbodyCarrito.innerHTML = htmlCarrito
+}
