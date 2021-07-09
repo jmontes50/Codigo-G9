@@ -59,6 +59,8 @@ let listaPlatillos = [
 
 let divContenido = document.getElementById("contenido")
 
+let carrito = []
+
 let dibujarTarjetas = () => {
   let htmlTarjetas = "";
 
@@ -73,7 +75,7 @@ let dibujarTarjetas = () => {
         <p>${plato.descripcion}</p>
         <div class="precio">
           <span>S/ ${plato.precio}</span>
-          <button class="btn-agregar">
+          <button class="btn-agregar" data-idplato="${plato.id}">
             Agregar
           </button>
         </div>
@@ -85,3 +87,42 @@ let dibujarTarjetas = () => {
 }
 
 dibujarTarjetas()
+
+/**
+ * 1. obtener los elementos mediante el obj document, ya sea por id, etc...
+ * 2. obtenido los datos y después pues los hemos convertido o pasado por un algoritmo
+ * 
+ */
+
+//Obtenemos los btn-agregar, después del cambio al innerHTML de divContenido, ya que necesitamos que las tarjetas que representan cada producto existan en el DOM
+//Obtenemos un HTMLCollection que pasaremos a un arreglo
+let btnsAgregar = document.getElementsByClassName("btn-agregar")
+//convertimos el HTMLCollection a un array
+let arregloBtnsAgregar = Array.from(btnsAgregar)
+
+//recorrerlo
+arregloBtnsAgregar.forEach((boton) => {
+  //y por cada botón que obtengamos, le añadiremos un Listener
+  boton.addEventListener("click", () => {
+    //Necesitamos saber que botón estamos presionando, entonces utilizamos el atributo personalizado que guarda el id del plato, para reconocerlo.
+    //y lo hacemos mediante el método getAttribute, este método devuelve el valor del atributo
+    let idObtenido = +boton.getAttribute("data-idplato")
+    //Requerimos convertir este id a un number para que se compare correctamente, ya que se obtiene como un string, por eso le añadimos un + al momento de buscar
+    let platoObtenido = buscarPlatoPorId(idObtenido)
+
+    agregarACarrito(platoObtenido)
+  })
+})
+
+let buscarPlatoPorId = (id) => {
+  for(let i = 0; i < listaPlatillos.length; i++){
+    if(id === listaPlatillos[i].id){
+      return listaPlatillos[i]
+    }
+  }
+}
+
+let agregarACarrito = (platoAPedir) => {
+  carrito.push(platoAPedir)
+  console.log(carrito)
+}
