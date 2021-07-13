@@ -168,3 +168,29 @@ let dibujarCarrito = () => {
 
   tbodyCarrito.innerHTML = htmlCarrito
 }
+
+
+/////////////////////////////
+
+let btnPagar = document.getElementById("btn-pagar")
+
+btnPagar.addEventListener("click", () => {
+  let deseaGuardar = confirm("Desea guardar esta boleta?")
+  //deseaGuardar: boolean
+
+  if(deseaGuardar === true && carrito.length > 0){
+    //guardamos en el localStorage
+    //para poder guardar en el LS, necesitamos que carrito sea un string
+    let carritoString = JSON.stringify(carrito)
+    // console.log(carrito)
+    // console.log(carritoString)
+    //localStorage.setItem("clave","valor")
+    localStorage.setItem("pedidoGuardado", carritoString)
+  }
+})
+
+
+  let recuperarPedidos = localStorage.getItem("pedidoGuardado") //recupero el localStorage
+  // console.log(recuperarPedidos)
+  carrito = JSON.parse(recuperarPedidos)//reconvierto lo recuperado a JS con JSON.parse
+  dibujarCarrito() //vuelvo a dibujar carrito
