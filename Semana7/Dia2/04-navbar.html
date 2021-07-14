@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- una hoja de estilos y aprovechar las clases que ya bootstrap provee -->
+    <!-- <style>
+      .bg-primary{
+        background-color: lightsalmon !important;
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- navbar común y silvestre -->
+    <!-- navbar-expand-NN, NN es el breakpoint e indica cuando los elementos de mi navbar van a colapsar -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+      <!-- ponemos un container para que podamos indicar el contenedor de nuestros elementos -->
+      <div class="container-fluid">
+        <!-- logo o nombre de la página o app -->
+        <a href="#" class="navbar-brand">Mi App</a>
+        <!-- data-bs-target va a hacer ref. al id de elemento con la clase collapse navbar-collapse que es donde estarán los elementos de nuestro navbar -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#miNavbar">
+          <!-- sandwich -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- !!!IMPORTANTE: Se requiere un div con las clases collapse navbar-collapse, que sirvan de envoltura para los items de navegación y que estos colapsen correctamente -->
+        <div class="collapse navbar-collapse" id="miNavbar">
+          <!-- navbar-nav es un contedor para los li -->
+          <ul class="navbar-nav">
+            <li class="nav-item me-1">
+              Inicio
+            </li>
+            <li class="nav-item me-1">
+              Contáctenos
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
