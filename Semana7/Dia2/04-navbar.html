@@ -21,7 +21,7 @@
   <body>
     <!-- navbar común y silvestre -->
     <!-- navbar-expand-NN, NN es el breakpoint e indica cuando los elementos de mi navbar van a colapsar -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
       <!-- ponemos un container para que podamos indicar el contenedor de nuestros elementos -->
       <div class="container-fluid">
         <!-- logo o nombre de la página o app -->
@@ -34,14 +34,20 @@
         <!-- !!!IMPORTANTE: Se requiere un div con las clases collapse navbar-collapse, que sirvan de envoltura para los items de navegación y que estos colapsen correctamente -->
         <div class="collapse navbar-collapse" id="miNavbar">
           <!-- navbar-nav es un contedor para los li -->
-          <ul class="navbar-nav">
+          <ul class="navbar-nav me-auto">
             <li class="nav-item me-1">
               Inicio
             </li>
             <li class="nav-item me-1">
               Contáctenos
             </li>
+            <li class="nav-item me-1">
+              Acerca de
+            </li>
           </ul>
+          <button class="btn btn-dark">
+            Login
+          </button>
         </div>
       </div>
     </nav>
