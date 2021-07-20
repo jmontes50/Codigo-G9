@@ -82,4 +82,28 @@ const actualizarEstudiante = (id) => {
     // })
 }
 
-actualizarEstudiante(6)
+// actualizarEstudiante(6)
+
+const eliminarEstudiante = (id) => {
+    const configuracion = {
+        method:"DELETE"
+    }
+
+    fetch(`https://60f60ddc18254c00176e0100.mockapi.io/estudiantes/${id}`, configuracion)
+    .then((respuesta) => {
+        console.log(respuesta)
+        if(respuesta.status === 404){
+            console.error("error al obtener los datos")
+            return;
+        }
+        return respuesta.json()
+    })
+    .then((datos) => {
+        console.log(datos)
+    })
+    .catch((err) => {
+        console.error(err)
+    })
+}
+
+eliminarEstudiante(9000)
