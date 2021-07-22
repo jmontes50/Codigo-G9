@@ -5,7 +5,7 @@
 //3. Agregarlos al DOM
 
 //primero imports
-import { obtenerProductos } from "./productoService.js"
+import { obtenerProductos, crearProducto } from "./productoService.js"
 import { imprimirProductos } from "./Interfaz.js"
 
 //variables globales
@@ -29,7 +29,7 @@ btnCrear.addEventListener("click", () => {
 })
 
 //escuchar el submit
-formCrear.addEventListener("submit", (e) => {
+formCrear.addEventListener("submit", async (e) => {
     e.preventDefault()
 
     const nuevoProducto = {
@@ -39,6 +39,14 @@ formCrear.addEventListener("submit", (e) => {
         prod_stock: formCrear["prod_stock"].value,
         prod_oferta: formCrear["prod_oferta"].value,
     }
-
-    console.log(nuevoProducto)
+    try {
+        let rpta = await crearProducto(nuevoProducto)
+        // console.log(rpta)
+        formCrear.reset() //limpio el formulario
+        bsModalCrear.hide() //escondo el modal
+        getProductos() //obtengo los productos actualizados
+    } catch (error) {
+        console.log(error)
+    }
+    
 })
