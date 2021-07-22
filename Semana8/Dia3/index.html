@@ -17,11 +17,58 @@
 
     <main class="container">
         <h1 class="mt-4">Productos en Oferta</h1>
-        
+
+        <button class="btn btn-primary btn-lg my-2" id="btnCrear">Crear Producto</button>
+
         <div class="row" id="divProductos">
-            
+
         </div>
     </main>
+
+    <!-- modal -->
+    <div class="modal" tabindex="-1" id="modalCrear">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formCrear">
+                        <div>
+                            <label>Nombre Producto:</label>
+                            <input type="text" class="form-control" name="prod_nombre">
+                        </div>
+                        <div>
+                            <label>Descripción Producto</label>
+                            <input type="text" class="form-control" name="prod_descripcion">
+                        </div>
+                        <div>
+                            <label>Precio Producto</label>
+                            <input type="number" class="form-control" name="prod_precio">
+                        </div>
+                        <div>
+                            <label>Stock Producto</label>
+                            <input type="number" class="form-control" name="prod_stock">
+                        </div>
+                        <div>
+                            <label>Estado Producto</label>
+                            <select class="form-select" name="prod_oferta">
+                                <option value="true">Esta en oferta</option>
+                                <option value="false">No esta en oferta</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="formCrear">
+                        Crear Producto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
