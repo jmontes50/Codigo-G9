@@ -57,11 +57,24 @@ const getBotonesEliminar = () => {
     const arrBtnsEliminar = Array.from(btnsEliminar)
     
     arrBtnsEliminar.forEach((boton) => {
-        boton.addEventListener("click", async() => {
+        boton.addEventListener("click", () => {
             const id = boton.getAttribute("data-id")
-            let respuesta = await eliminarProducto(id)
-            console.log(respuesta)
-            getProductos()
+
+            Swal.fire({
+                icon:'warning',
+                title:'Desea eliminar el producto?',
+                showConfirmButton:true,
+                confirmButtonText:'Si, eliminar',
+                showCancelButton:true,
+                cancelButtonText:'No, cancelar'
+            }).then(async (result) => {
+                if(result.isConfirmed){
+                    let respuesta = await eliminarProducto(id)
+                    console.log(respuesta)
+                    getProductos()
+                }
+            })
+
         })
     })
 }
