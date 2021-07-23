@@ -5,7 +5,11 @@
 //3. Agregarlos al DOM
 
 //primero imports
-import { obtenerProductos, crearProducto, eliminarProducto } from "./productoService.js"
+import { 
+    obtenerProductos, 
+    crearProducto, 
+    eliminarProducto, 
+    obtenerProductoPorId } from "./productoService.js"
 import { imprimirProductos } from "./Interfaz.js"
 
 //variables globales
@@ -85,8 +89,15 @@ const getBotonesActualizar = () => {
     const arrBtnsActualizar = Array.from(btnsActualizar)
 
     arrBtnsActualizar.forEach((boton) => {
-        boton.addEventListener("click", () => {
-            console.log("click actualizar!")
+        boton.addEventListener("click", async() => {
+            const id = boton.getAttribute("data-id")
+            const productoObtenido = await obtenerProductoPorId(id)
+            console.log(productoObtenido)
+
+            formCrear.prod_nombre.value = productoObtenido.prod_nombre
+
+
+            bsModalCrear.show()
         })
     })
 }

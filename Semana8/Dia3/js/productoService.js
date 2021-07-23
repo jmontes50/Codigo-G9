@@ -43,8 +43,19 @@ const eliminarProducto = async (id) => {
     }
 }
 
+const obtenerProductoPorId = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL}/${id}`)
+        const producto = await respuesta.json()
+        return producto
+    } catch (error) {
+        throw error
+    }
+}
+
 export {
     obtenerProductos,
     crearProducto,
-    eliminarProducto
+    eliminarProducto,
+    obtenerProductoPorId
 }
