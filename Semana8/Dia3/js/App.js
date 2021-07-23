@@ -21,6 +21,7 @@ const getProductos = () => {
         // console.log(productos)
         imprimirProductos(productos)
         getBotonesEliminar()
+        getBotonesActualizar()
     })
 }
 getProductos()
@@ -75,6 +76,17 @@ const getBotonesEliminar = () => {
                 }
             })
 
+        })
+    })
+}
+
+const getBotonesActualizar = () => {
+    const btnsActualizar = document.getElementsByClassName("actualizar")
+    const arrBtnsActualizar = Array.from(btnsActualizar)
+
+    arrBtnsActualizar.forEach((boton) => {
+        boton.addEventListener("click", () => {
+            console.log("click actualizar!")
         })
     })
 }

@@ -20,6 +20,9 @@ const imprimirProductos = (arregloProductos) => {
                     <button class="btn btn-danger eliminar" data-id="${prod_id}">
                         Eliminar
                     </button>
+                    <button class="btn btn-info actualizar" data-id="${prod_id}">
+                        Actualizar
+                    </button>
                 </div>
                 <div class="card-footer">
                     <span class="fw-bold">Precio: </span> ${prod_precio}
