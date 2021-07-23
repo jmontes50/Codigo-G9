@@ -92,10 +92,14 @@ const getBotonesActualizar = () => {
         boton.addEventListener("click", async() => {
             const id = boton.getAttribute("data-id")
             const productoObtenido = await obtenerProductoPorId(id)
-            console.log(productoObtenido)
-
-            formCrear.prod_nombre.value = productoObtenido.prod_nombre
-
+            // console.log(productoObtenido)
+            let {prod_nombre, prod_descripcion, prod_stock, prod_precio, prod_oferta} = productoObtenido
+            
+            formCrear.prod_nombre.value = prod_nombre
+            formCrear.prod_descripcion.value = prod_descripcion
+            formCrear.prod_stock.value = prod_stock
+            formCrear.prod_precio.value = prod_precio
+            formCrear.prod_oferta.value = prod_oferta
 
             bsModalCrear.show()
         })
