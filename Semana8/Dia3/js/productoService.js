@@ -31,7 +31,20 @@ const crearProducto = async (objProducto) => {
     }
 }
 
+const eliminarProducto = async (id) => {
+    const configuracion = {
+        method:'DELETE'
+    }
+    try {
+        await fetch(`${URL}/${id}`, configuracion)
+        return "Eliminado"
+    } catch (error) {
+        throw error
+    }
+}
+
 export {
     obtenerProductos,
-    crearProducto
+    crearProducto,
+    eliminarProducto
 }

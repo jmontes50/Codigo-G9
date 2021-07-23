@@ -5,7 +5,7 @@
 //3. Agregarlos al DOM
 
 //primero imports
-import { obtenerProductos, crearProducto } from "./productoService.js"
+import { obtenerProductos, crearProducto, eliminarProducto } from "./productoService.js"
 import { imprimirProductos } from "./Interfaz.js"
 
 //variables globales
@@ -20,6 +20,7 @@ const getProductos = () => {
     .then(productos => {
         // console.log(productos)
         imprimirProductos(productos)
+        getBotonesEliminar()
     })
 }
 getProductos()
@@ -50,3 +51,17 @@ formCrear.addEventListener("submit", async (e) => {
     }
     
 })
+
+const getBotonesEliminar = () => {
+    const btnsEliminar = document.getElementsByClassName("eliminar")
+    const arrBtnsEliminar = Array.from(btnsEliminar)
+    
+    arrBtnsEliminar.forEach((boton) => {
+        boton.addEventListener("click", async() => {
+            const id = boton.getAttribute("data-id")
+            let respuesta = await eliminarProducto(id)
+            console.log(respuesta)
+            getProductos()
+        })
+    })
+}
