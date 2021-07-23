@@ -53,9 +53,26 @@ const obtenerProductoPorId = async (id) => {
     }
 }
 
+const actualizarProducto = async (objProducto) => {
+    const configuracion = {
+        method:'PUT',
+        body:JSON.stringify(objProducto),
+        headers:{'Content-Type':'application/json'}
+    }
+
+    try {
+        const respuesta = await fetch(`${URL}/${objProducto.prod_id}`, configuracion)
+        const productoActualizado = await respuesta.json()
+        return productoActualizado
+    } catch (error) {
+        throw error
+    }
+}
+
 export {
     obtenerProductos,
     crearProducto,
     eliminarProducto,
-    obtenerProductoPorId
+    obtenerProductoPorId,
+    actualizarProducto
 }
