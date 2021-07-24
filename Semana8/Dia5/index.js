@@ -27,3 +27,6 @@ server.listen(9000, () => console.log("El servidor se inicio 9000"));
 
 //? mitienda.com => mitienda.com:80
 //? mitienda.com:3000 => mitienda.com:3000
+//? Cuando agamos pull de un proyecto que tenga en node, sea
+//? react, vue, angular, etc siempre
+//? ```npm install```
