@@ -1,0 +1,20 @@
+{
+  "name": "proyectonode",
+  "version": "1.0.0",
+  "description": "proyectito de prueba",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "prueba",
+    "axios"
+  ],
+  "author": "Jorge Montesinos",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
