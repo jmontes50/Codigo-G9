@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import Footer from './components/Footer'
+import ListaTareas from './components/ListaTareas'
 
 export default function App() {
   //const [estado, funcDelEstado] = useState(estadoInicial)
@@ -14,12 +15,9 @@ export default function App() {
   return (
     <div>
       <h1>{miTitulo}</h1>
-      <ul>
-        {tareas.map((tar, indice) => (
-          <li key={indice}>{tar}</li>
-        ))}
-      </ul>
+      <ListaTareas tareas={tareas}/>
       <hr/>
+      
       <button onClick={anadirTarea}>
         Anadir Tarea
       </button>

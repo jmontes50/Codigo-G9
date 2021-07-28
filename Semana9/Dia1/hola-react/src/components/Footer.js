@@ -5,6 +5,8 @@ export default function Footer(props) {
     return (
         <div>
             footer
+            <br/>
+            {props.mensaje}
         </div>
     )
 }
