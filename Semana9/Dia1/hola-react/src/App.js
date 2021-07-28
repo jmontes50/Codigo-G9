@@ -1,18 +1,27 @@
-
+import {useState} from 'react'
 
 export default function App() {
-  let titulo = "Mi App2"
+  //const [estado, funcDelEstado] = useState(estadoInicial)
+  const [tareas, setTareas] = useState(["pasear al perro"])
 
+  const anadirTarea = () => {
+    setTareas([...tareas, "lavar la ropa"])
+  }
 
+  const miTitulo = "Mi App"
 
   return (
     <div>
-      <h1>{titulo}</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, incidunt.patata
-      </p>
+      <h1>{miTitulo}</h1>
+      <ul>
+        {tareas.map((tar, indice) => (
+          <li key={indice}>{tar}</li>
+        ))}
+      </ul>
       <hr/>
-      <br/>
+      <button onClick={anadirTarea}>
+        Anadir Tarea
+      </button>
     </div>
   )
 }
