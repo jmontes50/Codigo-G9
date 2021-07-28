@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Footer from './components/Footer'
 
 export default function App() {
   //const [estado, funcDelEstado] = useState(estadoInicial)
@@ -22,6 +23,8 @@ export default function App() {
       <button onClick={anadirTarea}>
         Anadir Tarea
       </button>
+      <Footer mensaje={"Empresa1"}/>
+      <Footer mensaje={"Empresa2"}/>
     </div>
   )
 }
