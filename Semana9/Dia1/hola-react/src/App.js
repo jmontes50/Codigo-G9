@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Footer from './components/Footer'
 import ListaTareas from './components/ListaTareas'
 import InputTarea from './components/InputTarea'
@@ -27,6 +27,10 @@ export default function App() {
   }
 
   const miTitulo = "Mi App"
+
+  useEffect(() => {
+    setTexto("")
+  }, [tareas]) //cada vez que tareas cambia significa que hemos agregado o eliminado una tarea
 
   return (
     <div>
