@@ -16,12 +16,22 @@ export default function App() {
     setTexto(nuevoTexto)
   }
 
+  const eliminarTarea = (indice) => {
+    // console.log(indice)
+    //crear un arregloTmp por spread operator
+    let tareasTmp = [...tareas]
+    //elimino 01 item, apartir del indice que reciba
+    tareasTmp.splice(indice, 1)
+    //ya con el item eliminado en mi temporal, actualizo el estado
+    setTareas(tareasTmp)
+  }
+
   const miTitulo = "Mi App"
 
   return (
     <div>
       <h1>{miTitulo}</h1>
-      <ListaTareas tareas={tareas}/>
+      <ListaTareas tareas={tareas} eliminarTarea={eliminarTarea}/>
       <hr/>
       <InputTarea 
         texto={texto} 
