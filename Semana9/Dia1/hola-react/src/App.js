@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Footer from './components/Footer'
 import ListaTareas from './components/ListaTareas'
+import InputTarea from './components/InputTarea'
 
 export default function App() {
   //const [estado, funcDelEstado] = useState(estadoInicial)
@@ -22,12 +23,11 @@ export default function App() {
       <h1>{miTitulo}</h1>
       <ListaTareas tareas={tareas}/>
       <hr/>
-
-      <input type="text" value={texto} onChange={(e) => {manejarTexto(e.target.value)}}/>
-
-      <button onClick={anadirTarea}>
-        Anadir Tarea
-      </button>
+      <InputTarea 
+        texto={texto} 
+        manejarTexto={manejarTexto}
+        anadirTarea={anadirTarea}
+      />
       <Footer mensaje={"Empresa1"}/>
       <Footer mensaje={"Empresa2"}/>
     </div>
