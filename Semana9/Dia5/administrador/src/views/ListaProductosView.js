@@ -22,14 +22,18 @@ export default function ListaProductosView() {
     return (
         <div>
             <h1>Productos registrados</h1>
-
+            <button className="btn btn-primary btn-lg my-2">
+                Crear Producto
+            </button>
             <table className="table">
                 <thead>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Descripción</th>
-                    <th>Stock</th>
-                    <th>Acciones</th>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {productos.map((prod, i) => (
@@ -38,7 +42,11 @@ export default function ListaProductosView() {
                             <td>{prod.prod_precio}</td>
                             <td>{prod.prod_descripcion}</td>
                             <td>{prod.prod_stock}</td>
-                            <td></td>
+                            <td>
+                                <button className="btn btn-warning btn-sm">
+                                    <i className="fas fa-edit"></i>
+                                </button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

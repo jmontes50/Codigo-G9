@@ -1,9 +1,12 @@
-import ListaProductosView from "./views/ListaProductosView"
+import { BrowserRouter as Router, Switch } from "react-router-dom"
+import Routes from "./Routes"
 
 export default function App() {
   return (
-    <div>
-      <ListaProductosView />
-    </div>
+    <Router>
+      <Switch>
+        <Routes />
+      </Switch>
+    </Router>
   )
 }
