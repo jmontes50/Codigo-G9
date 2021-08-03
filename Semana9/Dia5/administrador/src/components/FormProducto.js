@@ -1,5 +1,7 @@
 
-export default function FormProducto() {
+export default function FormProducto({value, actualizarInput}) {
+    
+
     return (
         <div>
             <form>
@@ -11,6 +13,8 @@ export default function FormProducto() {
                         type="text"
                         className="form-control"
                         name="prod_nombre"
+                        value={value.prod_nombre}
+                        onChange={(e) => {actualizarInput(e)}}
                     />
                 </div>
 
