@@ -26,6 +26,8 @@ export default function FormProducto({value, actualizarInput}) {
                         type="text"
                         className="form-control"
                         name="prod_descripcion"
+                        value={value.prod_descripcion}
+                        onChange={(e) => {actualizarInput(e)}}
                     />
                 </div>
 
@@ -37,6 +39,8 @@ export default function FormProducto({value, actualizarInput}) {
                         type="number"
                         className="form-control"
                         name="prod_precio"
+                        value={value.prod_precio}
+                        onChange={(e) => {actualizarInput(e)}}
                     />
                 </div>
 
@@ -48,6 +52,8 @@ export default function FormProducto({value, actualizarInput}) {
                         type="number"
                         className="form-control"
                         name="prod_stock"
+                        value={value.prod_stock}
+                        onChange={(e) => {actualizarInput(e)}}
                     />
                 </div>
 
@@ -56,6 +62,8 @@ export default function FormProducto({value, actualizarInput}) {
                         type="checkbox"
                         className="form-check-input"
                         name="prod_oferta"
+                        checked={value.prod_oferta}
+                        onChange={(e) => {actualizarInput(e)}}
                     />
                     <label className="form-check-label">
                         Ofertar Producto

@@ -12,8 +12,13 @@ export default function CrearProductoView() {
     })
 
     const actualizarInput = (e) => {
-        console.log("name",e.target.name)
-        console.log("value", e.target.value)
+        if(e.target.name === "prod_oferta"){
+            setValue({
+                ...value,
+                [e.target.name]:e.target.checked
+            })
+            return
+        }
         setValue({
             ...value,
             [e.target.name]:e.target.value
