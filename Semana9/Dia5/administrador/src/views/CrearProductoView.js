@@ -12,11 +12,12 @@ export default function CrearProductoView() {
     })
 
     const actualizarInput = (e) => {
-        console.log(e)
-        // setValue({
-        //     ...value,
-        //     [e.target.name]:e.target.value
-        // })
+        console.log("name",e.target.name)
+        console.log("value", e.target.value)
+        setValue({
+            ...value,
+            [e.target.name]:e.target.value
+        })
     }
 
     return (
