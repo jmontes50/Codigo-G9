@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom"
 
 export default function EditarProductoView() {
     //useParams en forma de objeto me va a dar los parámetros que este recibiendo por la URL
-    const parametros = useParams()
-    console.log(parametros)
+    const {id} = useParams()
 
     return (
         <div>
