@@ -41,8 +41,9 @@ export default function EditarProductoView() {
         })
     }
 
-    const manejarSubmit = () => {
-
+    const manejarSubmit = (e) => {
+        e.preventDefault()
+        await editarProducto(value, id)
     }
 
     return (
@@ -51,7 +52,7 @@ export default function EditarProductoView() {
             <FormProducto 
                 value={value} 
                 actualizarInput={actualizarInput}
-                manejarSubmit={}
+                manejarSubmit={manejarSubmit}
             />
         </div>
     )
