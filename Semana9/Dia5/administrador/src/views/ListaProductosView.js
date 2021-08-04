@@ -44,9 +44,12 @@ export default function ListaProductosView() {
                             <td>{prod.prod_descripcion}</td>
                             <td>{prod.prod_stock}</td>
                             <td>
-                                <button className="btn btn-warning btn-sm">
+                                <Link 
+                                    className="btn btn-warning btn-sm" 
+                                    to={`/editar/${prod.prod_id}`}
+                                >
                                     <i className="fas fa-edit"></i>
-                                </button>
+                                </Link>
                             </td>
                         </tr>
                     ))}
