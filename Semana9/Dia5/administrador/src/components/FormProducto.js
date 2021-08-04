@@ -1,10 +1,14 @@
 
-export default function FormProducto({value, actualizarInput}) {
+export default function FormProducto({
+    value, 
+    actualizarInput,
+    manejarSubmit
+}) {
     
 
     return (
         <div>
-            <form>
+            <form onSubmit={(e)=>{manejarSubmit(e)}}>
                 <div className="mb-3">
                     <label className="form-label">
                         Nombre Producto
