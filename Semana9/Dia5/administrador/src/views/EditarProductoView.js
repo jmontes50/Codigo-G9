@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
+import { useHistory } from 'react-router-dom'
+import Swal from "sweetalert2"
+
 import { editarProducto, obtenerProductoPorId } from '../services/productosService'
 import FormProducto from '../components/FormProducto'
 
@@ -41,7 +44,7 @@ export default function EditarProductoView() {
         })
     }
 
-    const manejarSubmit = (e) => {
+    const manejarSubmit = async (e) => {
         e.preventDefault()
         await editarProducto(value, id)
     }
