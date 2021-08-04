@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react"
+import { useHistory } from "react-router-dom"
 import Swal from "sweetalert2"
 
 import { crearProducto } from "../services/productosService"
@@ -12,6 +13,8 @@ export default function CrearProductoView() {
         prod_stock:0,
         prod_oferta:false,
     })
+    //history es un objeto que va a tener toda la navegacion de mi aplicación, como un historial
+    const history = useHistory()
 
     const actualizarInput = (e) => {
         if(e.target.name === "prod_oferta"){
@@ -35,8 +38,9 @@ export default function CrearProductoView() {
                 icon:'success',
                 title:'Producto creado!!',
                 showConfirmButton:false,
-                timer:2000
+                timer:3000
             })
+            history.push('/')
         } catch (error) {
             console.error(error)
         }
