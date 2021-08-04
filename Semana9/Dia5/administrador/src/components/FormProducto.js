@@ -73,6 +73,12 @@ export default function FormProducto({
                         Ofertar Producto
                     </label>
                 </div>
+
+                <div className="d-grid">
+                    <button className="btn btn-primary btn-lg" type="submit">
+                        Guardar
+                    </button>
+                </div>
             </form>
         </div>
     )

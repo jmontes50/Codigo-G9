@@ -25,11 +25,24 @@ export default function CrearProductoView() {
         })
     }
 
+    const manejarSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            await crearProducto(value)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     return (
         <div>
             <h1>Crear producto</h1>
 
-            <FormProducto value={value} actualizarInput={actualizarInput} />
+            <FormProducto 
+                value={value} 
+                actualizarInput={actualizarInput} 
+                manejarSubmit={manejarSubmit}
+            />
         </div>
     )
 }
