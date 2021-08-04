@@ -16,6 +16,7 @@ export default function EditarProductoView() {
     })
     //useParams en forma de objeto me va a dar los parámetros que este recibiendo por la URL
     const {id} = useParams()
+    const history = useHistory()
 
     const getProducto = async () => {
         try {
@@ -47,6 +48,13 @@ export default function EditarProductoView() {
     const manejarSubmit = async (e) => {
         e.preventDefault()
         await editarProducto(value, id)
+        await Swal.fire({
+            icon:"success",
+            title:"Producto editado con éxito",
+            showConfirmButton:false,
+            timer:3000
+        })
+        history.push('/')
     }
 
     return (
