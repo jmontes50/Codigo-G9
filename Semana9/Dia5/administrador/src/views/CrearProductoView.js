@@ -1,4 +1,6 @@
 import { useState,useEffect } from "react"
+import Swal from "sweetalert2"
+
 import { crearProducto } from "../services/productosService"
 import FormProducto from "../components/FormProducto"
 
@@ -29,6 +31,12 @@ export default function CrearProductoView() {
         e.preventDefault()
         try {
             await crearProducto(value)
+            await Swal.fire({
+                icon:'success',
+                title:'Producto creado!!',
+                showConfirmButton:false,
+                timer:2000
+            })
         } catch (error) {
             console.error(error)
         }
