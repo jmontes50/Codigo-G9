@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom"
 import { useHistory } from 'react-router-dom'
 import Swal from "sweetalert2"
 
-import { editarProducto, obtenerProductoPorId } from '../services/productosService'
+import { editarProducto, obtenerProductoPorId, subirArchivo } from '../services/productosService'
 import FormProducto from '../components/FormProducto'
+
+let imagen //undefined
 
 export default function EditarProductoView() {
     const [value, setValue] = useState({
@@ -47,7 +49,12 @@ export default function EditarProductoView() {
 
     const manejarSubmit = async (e) => {
         e.preventDefault()
-        await editarProducto(value, id)
+        if(typeof imagen !== undefined){ //si es que es diferente de undefined hay imagen
+            const urlArchivo = await subirArchivo(imagen)
+            await editarProducto({...value, prod_imagen:urlArchivo}, id)
+        }else{
+            await editarProducto(value, id)//si es que no tiene imagen, me limito a actualizar los demás campos
+        }
         await Swal.fire({
             icon:"success",
             title:"Producto editado con éxito",
@@ -57,6 +64,12 @@ export default function EditarProductoView() {
         history.push('/')
     }
 
+    const manejarImagen = (e) => {
+        e.preventDefault()
+        // console.log(e.target.files) //es un arreglo de archivos
+        imagen = e.target.files[0]
+    }
+
     return (
         <div>
             <h1>Editar Producto</h1>
@@ -64,6 +77,7 @@ export default function EditarProductoView() {
                 value={value} 
                 actualizarInput={actualizarInput}
                 manejarSubmit={manejarSubmit}
+                manejarImagen={manejarImagen}
             />
         </div>
     )
