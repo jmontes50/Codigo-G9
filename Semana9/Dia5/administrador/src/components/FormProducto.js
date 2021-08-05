@@ -1,19 +1,13 @@
 import {useRef} from "react"
 
-let imagen;
-
 export default function FormProducto({
     value, 
     actualizarInput,
-    manejarSubmit
+    manejarSubmit,
+    manejarImagen
 }) {
     //useRef es como un Id internet de React
     const inputFile = useRef()
-
-    const manejarImagen = (e) => {
-        e.preventDefault()
-        console.log(e)
-    }
 
     return (
         <div>
