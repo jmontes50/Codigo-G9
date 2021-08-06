@@ -13,7 +13,9 @@ export default function PortadaView() {
         }
     }
 
-
+    useEffect(() => {
+        getProductos()
+    }, [])
 
     return (
         <div>
