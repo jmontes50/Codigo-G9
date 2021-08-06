@@ -1,10 +1,14 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import Routes from "./Routes"
 
 export default function App() {
   return (
-    <div>
-
-    </div>
+    <Router>
+      <Switch>
+        <Routes/>
+      </Switch>
+    </Router>
   )
 }
 
