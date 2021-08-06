@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import { obtenerProductos } from "../services/productosService"
+import GroupProducts from '../components/GroupProducts'
 
 export default function PortadaView() {
     const [productos, setProductos] = useState([])
@@ -19,7 +20,7 @@ export default function PortadaView() {
 
     return (
         <div>
-            
+            <GroupProducts productos={productos} />
         </div>
     )
 }
