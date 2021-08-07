@@ -3,13 +3,12 @@ import imgLogin from "../assets/login.jpg"
 
 export default function LoginView() {
     return (
-        <div className="h-100 row">
-            <div className="col-sm-12 col-md-6">
+        <div className="row" style={{height:'calc(100vh - 60px)'}}>
+            <div className="col-sm-12 col-md-6" style={{height:'100%',overflow:'hidden'}}>
                 <img 
                     src={imgLogin} 
                     style={{
-                        width:'100%',
-                        height:'100%',
+                        maxHeight:'100%',
                         objectFit:'cover'
                     }}
                     alt="imagen login"
