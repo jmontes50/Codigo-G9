@@ -3,6 +3,8 @@ import { CarritoContext } from '../context/carritoContext'
 import {useParams} from "react-router-dom"
 import { obtenerProductoPorId } from '../services/productosService'
 import Loading from '../components/Loading'
+import Swal from "sweetalert2"
+import { useHistory } from 'react-router'
 
 export default function ProductoView() {
     const [producto, setProducto] = useState({})
@@ -10,6 +12,9 @@ export default function ProductoView() {
 
     const { id } = useParams()
     //useContext me permite acceder a lo que compartimos en el context, pero necesita la referencia al contexto
+
+    const history = useHistory()
+
     const {anadirACarrito} = useContext(CarritoContext)
 
     const getProducto = async () => {
@@ -22,8 +27,21 @@ export default function ProductoView() {
         }
     }
 
-    const anadirACarritoContext = () => {
+    const anadirACarritoContext = async() => {
         anadirACarrito(producto)
+        const resultado = await Swal.fire({
+            icon:'success',
+            title:"Producto añadido!",
+            showConfirmButton:true,
+            showDenyButton:true,
+            confirmButtonText:'Seguir comprando',
+            denyButtonText:'Ir a carrito'
+        })
+        if(resultado.isConfirmed){
+            history.push('/')
+        }else if(resultado.isDenied){
+            history.push('/carrito')
+        }
     }
 
     useEffect(() => {

@@ -27,9 +27,9 @@ export default function CarritoView() {
                     {carrito.map((prod, i) => (
                         <tr key={i}>
                             <td>{prod.prod_nombre}</td>
-                            <td></td>
-                            <td>{prod.prod_precio}</td>
-                            <td></td>
+                            <td>{prod.cantidad}</td>
+                            <td>S/ {prod.prod_precio}</td>
+                            <td>S/ {prod.cantidad * prod.prod_precio}</td>
                         </tr>
                     ))}
                 </tbody>
