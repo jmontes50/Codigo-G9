@@ -31,7 +31,7 @@ export default function ProductosView() {
         // console.log(inputBusqueda.current.value)
         let miBusqueda = inputBusqueda.current.value
         const productosFiltrados = await obtenerProductos(miBusqueda)
-        console.log(productosFiltrados)
+        setProductos(productosFiltrados)
     }
 
     useEffect(() => {
