@@ -1,4 +1,5 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
+import { CarritoContext } from '../context/carritoContext'
 import {useParams} from "react-router-dom"
 import { obtenerProductoPorId } from '../services/productosService'
 import Loading from '../components/Loading'
@@ -8,6 +9,8 @@ export default function ProductoView() {
     const [cargando, setCargando] = useState(true)
 
     const { id } = useParams()
+    //useContext me permite acceder a lo que compartimos en el context, pero necesita la referencia al contexto
+    const {anadirACarrito} = useContext(CarritoContext)
 
     const getProducto = async () => {
         try {
@@ -17,6 +20,10 @@ export default function ProductoView() {
         } catch (error) {
             console.error(error)
         }
+    }
+
+    const anadirACarritoContext = () => {
+        anadirACarrito(producto)
     }
 
     useEffect(() => {
@@ -48,6 +55,7 @@ export default function ProductoView() {
 
                                 <button 
                                     className="btn btn-dark btn-lg"
+                                    onClick={anadirACarritoContext}
                                 >
                                     <i className="fas fa-shopping-cart me-2"/>
                                     Añadir a Carrito
