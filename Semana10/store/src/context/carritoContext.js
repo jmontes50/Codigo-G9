@@ -8,7 +8,7 @@ const CarritoContextProvider = (props) => {
 
     const anadirACarrito = (producto) => {
         for(let i = 0; i < carrito.length; i++){
-            if(carrito[i].id === producto.id){
+            if(carrito[i].prod_id === producto.prod_id){
                 //significa que tenemos el producto ya dentro del carrito
                 const productoExiste = {
                     ...carrito[i],
