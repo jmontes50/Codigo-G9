@@ -19,6 +19,7 @@ export default function CarritoView() {
                     <tr>
                         <th>Nombre</th>
                         <th>Cantidad</th>
+                        <th>Descuento</th>
                         <th>Precio Unitario</th>
                         <th>Precio Total</th>
                     </tr>
@@ -28,8 +29,11 @@ export default function CarritoView() {
                         <tr key={i}>
                             <td>{prod.prod_nombre}</td>
                             <td>{prod.cantidad}</td>
+                            <td>{prod.prod_oferta ? "10%" : "Sin Oferta"}</td>
                             <td>S/ {prod.prod_precio}</td>
-                            <td>S/ {prod.cantidad * prod.prod_precio}</td>
+                            <td>S/ {prod.prod_oferta ? 
+                            prod.cantidad * prod.prod_precio * 0.9 : 
+                            prod.cantidad * prod.prod_precio}</td>
                         </tr>
                     ))}
                 </tbody>
