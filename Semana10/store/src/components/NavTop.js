@@ -10,6 +10,10 @@ export default function NavTop() {
 
 	const { carrito } = useContext(CarritoContext)
 
+	const totalCarrito = carrito.reduce((total, item) => {
+		return total + item.cantidad
+	}, 0)
+
 	return (
 		<Navbar bg="light" expand="lg">
 			<Container>
@@ -22,17 +26,23 @@ export default function NavTop() {
 								Inicio
 							</Link>
 						</Nav.Link>
-						<Nav.Link>
+						{/* <Nav.Link>
 							<Link to="/carrito">
 								Carrito
+								<Badge badgeContent={totalCarrito} color="primary">
+									<ShoppingCartIcon />
+								</Badge>
+							</Link>
+						</Nav.Link> */}
+					</Nav>
+					<Nav.Link>
+							<Link to="/carrito">
+								Carrito
+								<Badge badgeContent={totalCarrito} color="primary">
+									<ShoppingCartIcon />
+								</Badge>
 							</Link>
 						</Nav.Link>
-						<Nav.Link>
-							<Badge badgeContent={carrito.length} color="primary">
-								<ShoppingCartIcon />
-							</Badge>
-						</Nav.Link>
-					</Nav>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
