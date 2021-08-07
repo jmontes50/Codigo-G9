@@ -26,14 +26,11 @@ export default function NavTop() {
 								Inicio
 							</Link>
 						</Nav.Link>
-						{/* <Nav.Link>
-							<Link to="/carrito">
-								Carrito
-								<Badge badgeContent={totalCarrito} color="primary">
-									<ShoppingCartIcon />
-								</Badge>
+						<Nav.Link>
+							<Link to="/productos">
+								Productos
 							</Link>
-						</Nav.Link> */}
+						</Nav.Link>
 					</Nav>
 					<Nav.Link>
 							<Link to="/carrito">
