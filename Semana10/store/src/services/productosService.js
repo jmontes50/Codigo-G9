@@ -2,9 +2,9 @@ import axios from "axios"
 
 const URL = `${process.env.REACT_APP_API}/productos`
 
-const obtenerProductos = async() => {
+const obtenerProductos = async(busqueda = "") => {
     try {
-        let { data } = await axios.get(URL)
+        let { data } = await axios.get(`${URL}?search=${busqueda}`)
         return data //ya tenemos los datos
     } catch (error) {
         throw error
