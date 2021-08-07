@@ -6,6 +6,7 @@ import Slider from '@material-ui/core/Slider';
 
 export default function ProductosView() {
     const [productos, setProductos] = useState([])
+    const [productosOriginal, setProductosOriginal] = useState([])
     const [cargando, setCargando] = useState(true)
     const [filtroPrecio, setFiltroPrecio] = useState([1, 100])
 
@@ -13,6 +14,7 @@ export default function ProductosView() {
         try {
             const productosObtenidos = await obtenerProductos()
             setProductos(productosObtenidos)
+            setProductosOriginal(productosObtenidos)
             setCargando(false)
         } catch (error) {
             console.error(error)
@@ -26,6 +28,13 @@ export default function ProductosView() {
     useEffect(() => {
         getProductos()
     }, [])
+
+    useEffect(() => {
+        let productosFiltrados = productosOriginal.filter((prod) => {
+            return prod.prod_precio >= filtroPrecio[0] && prod.prod_precio <= filtroPrecio[1]
+        })
+        setProductos(productosFiltrados)
+    }, [filtroPrecio])
 
     return (
         <div>
@@ -42,6 +51,10 @@ export default function ProductosView() {
                            <h5>Filtrar Por precio</h5>
                            <Slider
                                 value={filtroPrecio}
+                                onChange={manejarPrecio}
+                                valueLabelDisplay="auto"
+                                min={1}
+                                max={120}
                             />
                        </div>
                     </div>
