@@ -1,5 +1,7 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import {Link} from "react-router-dom"
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Badge from '@material-ui/core/Badge';
 
 export default function NavTop() {
 	return (
