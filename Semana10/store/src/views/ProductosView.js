@@ -25,7 +25,13 @@ export default function ProductosView() {
         <div>
             {cargando ? 
             (<Loading/>) :
-            (<div>
+            (<div className="py-4">
+                <div className="container text-center">
+                    <h1 className="my-4">
+                        <i className="fas fa-gifts me-3" />
+                        Nuestros Productos
+                    </h1>
+                </div>
                 <GroupProducts productos={productos} />
             </div>)}
         </div>
