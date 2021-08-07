@@ -14,6 +14,16 @@ export default function LoginView() {
                     alt="imagen login"
                 />
             </div>
+            <div className="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
+                <div className="text-center">
+                    <h2>Ingresa!</h2>
+                    <button className="btn btn-danger btn-lg">
+                        <i classname="fab fa-google me-2"/>
+                        Ingresa con google
+                    </button>
+                </div>
+            </div>
+
         </div>
     )
 }
