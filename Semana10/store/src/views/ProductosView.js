@@ -27,8 +27,11 @@ export default function ProductosView() {
         setFiltroPrecio(nuevosPrecios)
     }
 
-    const ejecutarBusqueda = () => {
-        console.log(inputBusqueda.current.value)
+    const ejecutarBusqueda = async () => {
+        // console.log(inputBusqueda.current.value)
+        let miBusqueda = inputBusqueda.current.value
+        const productosFiltrados = await obtenerProductos(miBusqueda)
+        console.log(productosFiltrados)
     }
 
     useEffect(() => {
