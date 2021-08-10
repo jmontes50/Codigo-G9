@@ -26,7 +26,7 @@ const CarritoContextProvider = (props) => {
 
     useEffect(() => {
         const carritoStorage = JSON.parse(localStorage.getItem('carrito'))
-        if(carritoStorage.length > 0){
+        if(carritoStorage){
             setCarrito(carritoStorage)
         }
     },[])

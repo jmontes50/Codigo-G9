@@ -5,6 +5,12 @@ export default function CheckoutView() {
 
     const { carrito } = useContext(CarritoContext)
 
+    let total = 0
+
+    total = carrito.reduce((acum, item) => {
+        return acum + (item.cantidad * item.prod_precio)
+    }, 0)
+
     return (
         <div className="container mt-4">
             <h1>Verificar Compra</h1>
@@ -31,6 +37,19 @@ export default function CheckoutView() {
                                 </small>
                             </li>
                         ))}
+                        {total !== 0 ? 
+                           (<li className="list-group-item d-flex justify-content-between">
+                               <span className="fw-bold">
+                                   TOTAL:
+                               </span>
+                               <span>
+                                   S/ {total}
+                               </span>
+                           </li>) :
+                           (<li className="list-group-item">
+                               Todavía no ha agregado ningún producto.
+                           </li>)
+                        }
                     </ul>
                 </div>
             </div>

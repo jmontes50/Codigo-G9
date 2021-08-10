@@ -22,48 +22,38 @@ export default function NavTop() {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link>
-							<Link to="/">Inicio</Link>
-						</Nav.Link>
-						<Nav.Link>
-							<Link to="/productos">Productos</Link>
-						</Nav.Link>
+						<Link to="/">Inicio</Link>
+
+						<Link to="/productos">Productos</Link>
 					</Nav>
-					<Nav.Link>
-						<Link to="/carrito">
-							Carrito
-							<Badge badgeContent={totalCarrito} color="primary">
-								<ShoppingCartIcon />
-							</Badge>
-						</Link>
-					</Nav.Link>
-					<Nav.Link>
-						<Link to="/checkout">
-							Comprar!
-						</Link>
-					</Nav.Link>
+
+					<Link to="/carrito">
+						Carrito
+						<Badge badgeContent={totalCarrito} color="primary">
+							<ShoppingCartIcon />
+						</Badge>
+					</Link>
+
+					<Link to="/checkout">Comprar!</Link>
+
 					{userState ? (
-						<NavDropdown 
+						<NavDropdown
 							title={
 								<div className="d-inline">
 									<img
 										src={userState.photoURL}
 										className="me-2"
-										style={{borderRadius:"50%",width:"30px"}}
+										style={{ borderRadius: "50%", width: "30px" }}
 										alt="avatar"
 									/>
 									<span>{userState.displayName}</span>
 								</div>
 							}
-							>
-								<NavDropdown.Item onClick={signOut}>
-									Salir
-								</NavDropdown.Item>
+						>
+							<NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
 						</NavDropdown>
 					) : (
-						<Nav.Link>
-							<Link to="/login">Ingresar</Link>
-						</Nav.Link>
+						<Link to="/login">Ingresar</Link>
 					)}
 				</Navbar.Collapse>
 			</Container>
