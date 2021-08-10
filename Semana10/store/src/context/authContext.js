@@ -17,6 +17,8 @@ export const AuthContextProvider = (props) => {
         // console.log("google!!",rpta)
     }
 
+    const signOut = () => auth.signOut()
+
     useEffect(() => {
         return auth.onAuthStateChanged((user) => {
             setUserState(user)
@@ -30,7 +32,9 @@ export const AuthContextProvider = (props) => {
     
     return (
         <AuthContext.Provider
-            value={{signIn}}
+            value={{
+                signIn,signOut,userState
+            }}
         >
             {props.children}
         </AuthContext.Provider>
