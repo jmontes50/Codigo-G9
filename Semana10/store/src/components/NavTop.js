@@ -37,6 +37,11 @@ export default function NavTop() {
 							</Badge>
 						</Link>
 					</Nav.Link>
+					<Nav.Link>
+						<Link to="/checkout">
+							Comprar!
+						</Link>
+					</Nav.Link>
 					{userState ? (
 						<NavDropdown 
 							title={
