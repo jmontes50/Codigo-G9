@@ -6,7 +6,8 @@ import Loading from '../components/Loading'
 import Swal from "sweetalert2"
 import { useHistory } from 'react-router'
 
-export default function ProductoView() {
+export default function ProductoView(props) {
+    console.log(props)
     const [producto, setProducto] = useState({})
     const [cargando, setCargando] = useState(true)
 
