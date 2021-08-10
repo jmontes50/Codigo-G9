@@ -14,7 +14,18 @@ export const AuthContextProvider = (props) => {
 
     const signIn = async () => {
         const rpta = await auth.signInWithPopup(proveedorGoogle)
-        console.log("google!!",rpta)
+        // console.log("google!!",rpta)
+    }
+
+    useEffect(() => {
+        return auth.onAuthStateChanged((user) => {
+            setUserState(user)
+            setAuthPending(false)
+        })
+    },[])
+
+    if (authPending) {
+        return <Loading/>
     }
     
     return (
