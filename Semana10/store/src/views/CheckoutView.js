@@ -1,9 +1,12 @@
 import {useState, useContext} from 'react'
 import { CarritoContext } from "../context/carritoContext"
+import { useForm } from "react-hook-form"
 
 export default function CheckoutView() {
 
     const { carrito } = useContext(CarritoContext)
+
+    const { register, handleSubmit, formState: {errors} } = useForm()
 
     let total = 0
 
@@ -64,7 +67,13 @@ export default function CheckoutView() {
                                 type="text"
                                 className="form-control"
                                 placeholder="Ej. Juan Perez"
+                                //{...register("nombre", {validaciones})}
+                                {...register("nombreCompleto", {required:true})}
                             />
+                            {errors.nombreCompleto && 
+                            <small className="text-danger">
+                                Este campo es obligatorio
+                            </small>}
                         </div>
                         <div className="mb-2">
                             <label className="form-label">
