@@ -14,6 +14,10 @@ export default function CheckoutView() {
         return acum + (item.cantidad * item.prod_precio)
     }, 0)
 
+    const recibirSubmit = (datos) => {
+        console.log(datos)
+    }
+
     return (
         <div className="container mt-4">
             <h1>Verificar Compra</h1>
@@ -58,7 +62,8 @@ export default function CheckoutView() {
 
                 <div className="col-sm-12 col-md-6">
                     <h4>Ingrese sus datos:</h4>
-                    <form>
+
+                    <form onSubmit={handleSubmit(recibirSubmit)}>
                         <div className="mb-2">
                             <label className="form-label">
                                 Nombres y apellidos
@@ -95,6 +100,10 @@ export default function CheckoutView() {
                                 placeholder="Ej. Urb. Yanahuara S/N"
                             />
                         </div>
+
+                        <button type="submit" className="btn btn-dark">
+                            Confirmar Compra
+                        </button>
                     </form>
                 </div>
             </div>
