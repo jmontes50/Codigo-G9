@@ -52,6 +52,42 @@ export default function CheckoutView() {
                         }
                     </ul>
                 </div>
+
+                <div className="col-sm-12 col-md-6">
+                    <h4>Ingrese sus datos:</h4>
+                    <form>
+                        <div className="mb-2">
+                            <label className="form-label">
+                                Nombres y apellidos
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Ej. Juan Perez"
+                            />
+                        </div>
+                        <div className="mb-2">
+                            <label className="form-label">
+                                Número de celular
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Ej. +51 926707653"
+                            />
+                        </div>
+                        <div className="mb-2">
+                            <label className="form-label">
+                                Dirección
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Ej. Urb. Yanahuara S/N"
+                            />
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     )
