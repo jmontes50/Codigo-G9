@@ -1,8 +1,11 @@
 import { useState, useContext } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form";
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
+import L from "leaflet"
 
 export default function CheckoutView() {
+    const [marcador, setMarcador] = useState([-12.0433, -77.0283])
 	const { carrito } = useContext(CarritoContext);
 
 	const {
@@ -10,6 +13,17 @@ export default function CheckoutView() {
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
+
+    const AddMarker = () => {
+        const map = useMapEvents({
+            click: (e) => {
+                console.log(e)
+                const {lat, lng} = e.latlng
+                setMarcador([lat, lng])
+            }
+        })
+        return null
+    }
 
 	let total = 0;
 
@@ -103,6 +117,20 @@ export default function CheckoutView() {
 							)}
 						</div>
 
+                        <MapContainer   
+                            center={[-12.0433, -77.0283]}
+                            zoom={17}
+                            style={{height:"400px"}}
+                        >
+                            <TileLayer
+                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
+                            <AddMarker />
+                            <Marker
+                                position={marcador}
+                            />
+                        </MapContainer>
 						<button type="submit" className="btn btn-dark">
 							Confirmar Compra
 						</button>
