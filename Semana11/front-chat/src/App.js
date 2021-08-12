@@ -8,7 +8,7 @@ export default function App() {
     <Router>
         <Switch>
           <Route path='/' exact component={Join} />
-          <Route path='/chat' exact component={Chat} />
+          <Route path='/chat' component={Chat} />
         </Switch>
     </Router>
   )
