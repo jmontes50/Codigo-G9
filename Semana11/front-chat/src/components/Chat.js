@@ -21,7 +21,13 @@ export default function Chat() {
 
         socket.emit('join', {name, room}, () => {})
 
-    }, [window.location.search])
+        return () => {
+            //cuando el componente se destruya, cambiamos de vista, cerramos la pestaña
+            socket.emit("disconnect")
+            socket.off()
+        }
+
+    }, [URL,window.location.search])
 
     useEffect(() => {
         //.on("tipo_mensaje") es escuchar
