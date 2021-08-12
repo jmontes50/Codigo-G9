@@ -1,44 +1,41 @@
-import {useState, useEffect} from 'react'
-import queryString from "query-string"
-import io from "socket.io-client"
+import { useState, useEffect } from "react";
+import queryString from "query-string";
+import io from "socket.io-client";
 
-let socket
+let socket;
 
 export default function Chat() {
-    const [name, setName] = useState('')
-    const [room, setRoom] = useState('')
+	const [name, setName] = useState("");
+	const [room, setRoom] = useState("");
 
-    const URL = "localhost:5000"
+	const URL = "https://chatsocket-vedu.herokuapp.com/";
 
-    useEffect(() => {
-        //window.location.search => name=Nombre&room=Sala
-        const { name, room } = queryString.parse(window.location.search)
-
-        socket = io(URL)
-       
+	const iniciarConexion = () => {
+		const { name, room } = queryString.parse(window.location.search);
         setName(name)
         setRoom(room)
+		socket = io(URL);
+		socket.emit("login", { usuario_correo: name });
+        mandarMensaje(`${name} se ha unido`)
+	};
 
-        socket.emit('join', {name, room}, () => {})
-
-        return () => {
-            //cuando el componente se destruya, cambiamos de vista, cerramos la pestaña
-            socket.emit("disconnect")
-            socket.off()
-        }
-
-    }, [URL,window.location.search])
+	const mandarMensaje = (mensaje) => {
+		socket.emit("crear-mensaje", {
+			usuario_correo: name,
+			mensaje: mensaje,
+			room: room,
+		});
+	};
 
     useEffect(() => {
-        //.on("tipo_mensaje") es escuchar
-        socket.on("message", (message) => {
-            console.log(message)
-        })
-    }, [])
+        iniciarConexion()
+    },[URL])
 
-    return (
-        <div>
-            
-        </div>
-    )
+    useEffect(() => {
+        socket.on("emitir-mensajes", (rpta) => {
+            console.log(rpta)
+        })
+    },[])
+
+	return <div></div>;
 }
