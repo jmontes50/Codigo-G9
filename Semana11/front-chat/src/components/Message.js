@@ -1,6 +1,7 @@
+import ReactEmoji from "react-emoji"
+
 export default function Message({ msj, name }) {
 	let usuarioActual = false;
-
 	const nameTrim = name.trim();
 
 	if (msj.user === nameTrim) {
@@ -13,7 +14,7 @@ export default function Message({ msj, name }) {
 			<div className="col-6">
 				<div className="bg-dark p-1">
 					<small>{nameTrim}</small>
-					<p className="text-white">{msj.text}</p>
+					<p className="text-white">{ReactEmoji.emojify(msj.text)}</p>
 				</div>
 			</div>
 		</div>
@@ -22,7 +23,7 @@ export default function Message({ msj, name }) {
 			<div className="col-6">
 				<div className="bg-secondary p-1">
 					<small>{msj.user}</small>
-					<p className="text-white">{msj.text}</p>
+					<p className="text-white">{ReactEmoji.emojify(msj.text)}</p>
 				</div>
 			</div>
             <div className="col-6"></div>
