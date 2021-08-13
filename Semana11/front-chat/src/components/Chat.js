@@ -7,24 +7,24 @@ let socket;
 export default function Chat() {
 	const [name, setName] = useState("");
 	const [room, setRoom] = useState("");
+    const [message, setMessage] = useState("")
+    const [messages, setMessages] = useState([])
 
-	const URL = "https://chatsocket-vedu.herokuapp.com/";
+	const URL = "localhost:5000";
 
 	const iniciarConexion = () => {
 		const { name, room } = queryString.parse(window.location.search);
         setName(name)
         setRoom(room)
 		socket = io(URL);
-		socket.emit("login", { usuario_correo: name });
-        mandarMensaje(`${name} se ha unido`)
+		socket.emit("join", { name: name, room:room }, () => {});
+        // mandarMensaje(`${name} se ha unido`)
 	};
 
-	const mandarMensaje = (mensaje) => {
-		socket.emit("crear-mensaje", {
-			usuario_correo: name,
-			mensaje: mensaje,
-			room: room,
-		});
+	const mandarMensaje = () => {
+		socket.emit("sendMessage", message, () => {
+            console.log("enviado")
+        });
 	};
 
     useEffect(() => {
@@ -32,10 +32,20 @@ export default function Chat() {
     },[URL])
 
     useEffect(() => {
-        socket.on("emitir-mensajes", (rpta) => {
+        socket.on("message", (rpta) => {
             console.log(rpta)
         })
-    },[])
+    })
 
-	return <div></div>;
+	return <div>
+                <input 
+                    type="text" 
+                    className="form-control" 
+                    value={message}
+                    onChange={(e) => {setMessage(e.target.value)}}
+                />
+                <button className="btn btn-dark" onClick={mandarMensaje}>
+                    Enviar
+                </button>
+            </div>;
 }
