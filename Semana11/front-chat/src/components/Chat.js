@@ -35,7 +35,7 @@ export default function Chat() {
         socket.on("message", (rpta) => {
             console.log(rpta)
         })
-    })
+    },[])
 
 	return <div>
                 <input 
